@@ -1,58 +1,53 @@
 <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Hello Bulma!</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
-        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-        <link href="stylesheets/style.css" rel="stylesheet">
-      </head>
-      <body>
-        <section class="hero is-success is-fullheight">
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                    <div class="column is-4 is-offset-4">
-                        <h3 class="title has-text-black">Login</h3>
-                        <hr class="login-hr">
-                        <p class="subtitle has-text-black">Please login to proceed.</p>
-                        <div class="box">
-                            <figure class="avatar">
-                                <img src="https://placehold.it/128x128">
-                            </figure>
-                            <form>
-                                <div class="field">
-                                    <div class="control">
-                                        <input class="input is-large" type="email" placeholder="Your Email" autofocus="">
-                                    </div>
-                                </div>
-    
-                                <div class="field">
-                                    <div class="control">
-                                        <input class="input is-large" type="password" placeholder="Your Password">
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <label class="checkbox">
-                      <input type="checkbox">
-                      Remember me
-                    </label>
-                                </div>
-                                <button class="button is-block is-info is-large is-fullwidth">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
-                            </form>
-                        </div>
-                        <p class="has-text-grey">
-                            <a href="../">Sign Up</a> &nbsp;·&nbsp;
-                            <a href="../">Forgot Password</a> &nbsp;·&nbsp;
-                            <a href="../">Need Help?</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <script async type="text/javascript" src="../js/bulma.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<html>
 
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />    
+  <title>Stock Watch</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="valign-wrapper stock">
+      <div class="valign" style="width:100%;">
+          <div class="container">
+              <div class="row">
+                  <div class="col s12 m6 offset-m3">
+                      <div class="card">
+                          <div class="card-content center-align">
+                              <img src="images/logo.png">
+                              <h4 class="white-text">Add Stock</h4>
+                              <form action="stockwatch.html">
+                                  <div class="row">
+                                      <div class="input-field col s12">
+                                          <input placeholder="STOCK NAME" id="stockName" type="text" class="validate">
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="input-field col s12">
+                                      <select class="browser-default">
+                                          <option value="PRICE: High - Low">PRICE: High - Low</option>
+                                          <option value="PRICE: Low - High">PRICE: Low - High</option>
+                                      </select>
+                                  </div>
+                                      </div>
+                                      <div class="card-action center-align">
+                                        <input type="submit" class="btn" value="Submit">
+                                    </div>
+                              </form>
+                          </div>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--JavaScript at end of body for optimized loading-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
-
 </html>
