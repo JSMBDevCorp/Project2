@@ -12,6 +12,15 @@ var orm = {
       });
     },
     
+    limitStock: function(tableOne, tableTwo, cb) {
+      var queryString = "SELECT stockSymbol, stockName, image, price, limitprice FROM stockwatch RIGHT JOIN setlimit ON stockwatch.limitprice_id = setlimit.id WHERE limitcross = true";
+        console.log(queryString)
+        console.log(tableOne, tableTwo)
+      connection.query(queryString, function(err, result) {
+        if (err) throw err;
+          cb(result)
+      });
+    },
 };
   
   

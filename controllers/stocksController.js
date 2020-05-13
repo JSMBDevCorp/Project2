@@ -12,10 +12,23 @@ router.get("/", function(req, res) {
       var stockObject = {
         stock: data
       };
-      console.log(stockObject)
+      // console.log(stockObject)
     //   return res.json(stockObject);
       res.render("index", stockObject);
     });
+});
+
+router.get("/limit", function(req, res) {
+  stock.limitStock(function(data) {
+
+      // console.log(data[0])
+    var stockObject = {
+      stock: data
+    };
+    console.log(stockObject.stock[1])
+  //   return res.json(stockObject);
+    res.render("limit", stockObject);
+  });
 });
 
 module.exports = router;
