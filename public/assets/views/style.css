@@ -12,6 +12,44 @@
     width: 60%;
 }
 
+.card {
+    background-color: rgb(0,0,0,0.7);
+}
+
+.card .card-content h4 {
+    text-transform: uppercase;
+}
+
+.card .card-content input {
+    background-color: #222222;
+    border-radius: 10px;
+    border-bottom: 1px solid #a4cd33;
+    color: #ffffff;
+}
+
+.card .card-content .browser-default {
+    background-color: #222222;
+    border-radius: 10px;
+    border-bottom: 1px solid #a4cd33;
+    color: #ffffff;
+}
+
+.card .card-content select{
+    border: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    height: 3.2rem;
+}
+
+.card .card-action input {
+    font-size: 1.7em;
+    height: 50px;
+    padding: 0px 40px;
+    border-radius: 30px;
+    background-color: #a4cd33;
+    color: #ffffff;
+}
+
 .stock {
     width: 100%;
     height: 80px;
@@ -64,41 +102,26 @@
     float: left;
 }
 
-.card {
-    background-color: rgb(0,0,0,0.7);
+.filterbutton {
+    background-color: #3455d0;
+    color: white;
 }
 
-.card .card-content h4 {
-    text-transform: uppercase;
+.btn {
+    border-radius: 255px;
 }
 
-.card .card-content input {
-    background-color: #222222;
-    border-radius: 10px;
-    border-bottom: 1px solid #a4cd33;
-    color: #ffffff;
-}
-
-.card .card-content .browser-default {
-    background-color: #222222;
-    border-radius: 10px;
-    border-bottom: 1px solid #a4cd33;
-    color: #ffffff;
-}
-
-.card .card-content select{
+.buttonfilter {
+    background-color: #3455d0;
+    color: white;
+    border-radius: 525px;
     border: none;
-    font-size: 16px;
-    text-transform: uppercase;
-    height: 3.2rem;
 }
 
-.card .card-action input {
-    font-size: 1.7em;
-    height: 50px;
-    padding: 0px 40px;
-    border-radius: 10px;
-    background-color: #a4cd33;
-    color: #ffffff;
+.buttonadd {
+    border-radius: 525px;
+    border: none;
 }
+
+
 
