@@ -8,11 +8,7 @@ var stock = {
         });
     },
 
-    limitStock: function(cb){
-        orm.limitStock("stockwatch", "setLimit", function(res) {
-            cb(res);
-        });
-    },
+    
     
 }
 

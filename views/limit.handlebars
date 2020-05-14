@@ -10,11 +10,11 @@
      <ul class="list-group ">
         {{#each stock}}
      <li >
-          <span>Stock Name: {{stockName}}</span>
-          <img src={{image}} alt="burger" >
+          <span>Stock Name: {{name}}</span>
+          <img src={{imageURL}} alt="Stock">
           <p>Price: ${{price}}</p>
           <span step='0.01'>limit: ${{limitprice}}</span>
-          <p>Stock Symbol: {{stockSymbol}}</p>
+          <p>Stock Symbol: {{symbol}}</p>
            <hr>
            </li>
         {{/each}}

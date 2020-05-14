@@ -1,25 +1,25 @@
 var express = require("express");
 
 var router = express.Router();
-
 // Import the model (stock.js) to use its database functions.
-var stock = require("../model/stock.js");
+var stocks = require("../models/stock.js");
 
 router.get("/", function(req, res) {
-    stock.allStock(function(data) {
+    stocks.allStock(function(data) {
 
-        console.log(data)
+        //console.log(data)
+        
       var stockObject = {
         stock: data
       };
-      // console.log(stockObject)
+      //console.log(stockObject)
     //   return res.json(stockObject);
       res.render("index", stockObject);
     });
 });
 
 router.get("/limit", function(req, res) {
-  stock.limitStock(function(data) {
+  stocks.limitStock(function(data) {
 
       // console.log(data[0])
     var stockObject = {
@@ -30,5 +30,16 @@ router.get("/limit", function(req, res) {
     res.render("limit", stockObject);
   });
 });
+router.post("/api/newStock", function(req, res){
+  
+  var obj = req.body;
+  console.log(req.body);
+  
+  stocks.create(obj, function(result){
+    console.log("Hello 27");
+    res.json(result);
+  });
+  console.log("Clicked on add stock");
+})
 
 module.exports = router;
