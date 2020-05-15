@@ -1,50 +1,37 @@
-<div class="row justify-content-center">
-
-  <div class="col-md-1 "> </div>
-
-  <div class="col-md-5 col-sm-12">
-    <h1>Stock Watchlist</h1>
-    <hr>
-    <!-- Bootstrap list group - basic example -->
-    <div class="row listCol">
-     <ul class="list-group ">
+<div class="card">
+  <div class="card-content center-align">
+      <img src="assets/images/logo-horizontal.png">
+      <h4 class="white-text">ALL STOCKS</h4>
+      
+      <!--START STOCK EXAMPLE-->
+      <ul class="list-group ">
         {{#each stock}}
-     <li >
-          <span>Stock Name: {{name}}</span>
-          <img src="{{imageURL}}" alt="Stock" >
-          <p>Price: ${{price}}</p>
-          <p>Stock Symbol: {{symbol}}</p>
-           <hr>
-           </li>
+          <li >
+            <div class="stock valign-wrapper">
+                <div class="stockpic">
+                    <img class="center-align" src="{{imageURL}}" alt="stockLogo">
+                </div>
+                <div class="stocksymbol ">
+                    {{symbol}}
+                </div>
+                <div class="stockprice ">
+                    ${{price}}
+                </div>
+                <div class="stockarrow ">
+                    <img src="assets/images/arrow-up.png">
+                </div>
+            </div>
+          </li>
         {{/each}}
       </ul>
-     
-        
-    </div>
+      <!--END STOCK EXAMPLE-->
+      
+      <form action="index.html">
+          <div class="card-action center-align">
+              <a href="/limit"><button type="button" class="btn">Filter</button></a>
+              <a href="/add"></a><button type="button" class="btn">Add</button></a>
+          </div>
+      </form>
   </div>
-    
-  <div class="col-md-1 "> </div>
 </div>
-</div>
-
-
-
-
-
-<h2>Add A Stock</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="stockSymbol">Stock Symbol:</label>
-    
-    <input type="text" id="stockSymbol" name="name">
-    <label for="maxPrice">Enter Max Price:</label>
-    <input type="text" id="maxPrice" name="name">
-  </div>
-
-  <button type="submit">Add Stock</button>
-</form>
-
-
-  
 

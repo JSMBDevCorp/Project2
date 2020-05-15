@@ -19,6 +19,7 @@ var stock = {
         //console.log(stockInfo);
     }
 };
+
 async function getStockData(symbol, obj, cb){
     var queryString = 'https://fmpcloud.io/api/v3/company/profile/' + symbol.toString().toUpperCase() + '?apikey=eb3eefc1b336a9ab7f2a8d082912d098';
     console.log(queryString);
