@@ -11,6 +11,7 @@ var orm = {
           cb(result)
       });
     },
+    
     create: function(tableName, obj, cb){
       //company name, symbol, limitprice, currentprice, imageurl
       var name = obj.companyName;
@@ -34,7 +35,7 @@ var orm = {
     },
     
     limitStock: function(tableOne, tableTwo, cb) {
-      var queryString = "SELECT symbol, name, imageURL, price, limitprice FROM stockwatch RIGHT JOIN setlimit ON stockwatch.limitprice_id = setlimit.id WHERE limitcross = true";
+      var queryString = "SELECT symbol, name, imageURL, currentPrice, limitprice FROM stockwatch RIGHT JOIN setlimit ON stockwatch.limitprice_id = setlimit.id WHERE limitcross = true";
         console.log(queryString)
         console.log(tableOne, tableTwo)
       connection.query(queryString, function(err, result) {
