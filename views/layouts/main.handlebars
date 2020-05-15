@@ -5,38 +5,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-        <!-- Added link to the font bootstrap library -->
-        <link
-        rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        />
-        
+        <!-- Added link to the materialize CDN library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!-- Added link to the materialize Icon library -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
         <!-- Added link to the jQuery library -->
         <script src="https://code.jquery.com/jquery.js"></script>
-        {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         
         <!-- CSS -->
         <link rel="stylesheet" href="./assets/css/style.css">
-
         <title>StockWATCH</title>
     </head>
-	
-	<body>
-		<main class="container-fluid" style="align-content: center">
-			{{{ body }}}
-		</main>
+    <body>
+        <main class="container-fluid" style="align-content: center">
+            <div class="valign-wrapper stockwatch">
+                <div class="valign" style="width:100%;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col s12 m6 offset-m3">
+                                {{{ body }}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
 
-    <!--  footer -->
-    <footer class="footer">
-        <div class="container">
-            <p><span class="glyphicon glyphicon-copyright-mark"></span> 2020 Copyright</p> 
-        </div>
-    </footer>
-
-	    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    {{!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> --}}
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="./assets/js/stocks.js"></script>
-	</body>
+    <!-- Compiled and minified materialize JavaScript at end of body for optimized loading -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
 </html>

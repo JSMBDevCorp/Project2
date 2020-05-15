@@ -18,6 +18,18 @@ router.get("/", function(req, res) {
     });
 });
 
+router.get("/limit", function(req, res) {
+  stocks.limitStock(function(data) {
+
+      // console.log(data[0])
+    var stockObject = {
+      stock: data
+    };
+    console.log(stockObject.stock[1])
+  //   return res.json(stockObject);
+    res.render("limit", stockObject);
+  });
+});
 router.post("/api/newStock", function(req, res){
   
   var obj = req.body;
