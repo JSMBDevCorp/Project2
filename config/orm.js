@@ -43,6 +43,17 @@ var orm = {
           cb(result)
       });
     },
+
+    delete: function(table, condition, cb) {
+    
+      connection.query(`DELETE FROM ${table} WHERE ${condition}`, function(err, result) {
+        if (err) {
+          throw err;
+        }
+  
+        cb(result);
+      });
+    }
 };
   
   

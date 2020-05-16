@@ -8,6 +8,9 @@
         {{#each stock}}
           <li >
             <div class="stock valign-wrapper">
+                <div>
+                  <button class="delete" type="button" data-id="{{id}}" >Delete</button>
+                </div>
                 <div class="stockpic">
                     <img class="center-align" src="{{imageURL}}" alt="stockLogo">
                 </div>
@@ -29,7 +32,7 @@
       <form action="index.html">
           <div class="card-action center-align">
               <a href="/limit"><button type="button" class="btn">Filter</button></a>
-              <a href="/newStock"><button type="button" class="btn">Add</button></a>
+              <a href="/api"><button type="button" class="btn">Add</button></a>
           </div>
       </form>
   </div>

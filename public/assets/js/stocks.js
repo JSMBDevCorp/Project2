@@ -39,4 +39,23 @@ $(function() {
       }
     );
   });
+
+  //Delete stock item
+  $(".delete").on("click", function(event) {
+    // Make sure to preventDefault on a click event.
+    event.preventDefault();
+    var id = $(this).data('id');
+    console.log(id)
+    // send the delete request.
+    $.ajax("/" + id, {
+      type: "DELETE",
+    }).then(
+      function() {
+        console.log("deleted stock #" + id);
+        // Reload the page to get the updated list
+        // location.reload();
+      }
+    );
+  });
+
 });

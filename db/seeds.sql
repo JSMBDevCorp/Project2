@@ -9,7 +9,7 @@ VALUES ("FB", "Facebook Inc.", null, 210.1,  "https://financialmodelingprep.com/
 ("GOOGL", "Alphabet Inc.", 3, 1375.18,  "https://financialmodelingprep.com/images-New-jpg/GOOGL.jpg"),
 ("UAL", "United Airlines Holdings, Inc.", 4, 22.76,  "https://financialmodelingprep.com/images-New-jpg/UAL.jpg");
 
-SELECT stockSymbol, stockName, price, limitprice AS `Limit`
+SELECT symbol, name, currentPrice, limitprice AS `Limit`
 FROM stockwatch
 RIGHT JOIN setlimit ON stockwatch.limitprice_id = setlimit.id WHERE limitcross = true;
 
