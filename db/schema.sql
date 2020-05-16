@@ -32,8 +32,9 @@ CREATE TABLE stockwatch (
   id INTEGER NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
   symbol VARCHAR(255) NOT NULL,
-  LimitPrice DECIMAL(10,2) NOT NULL,
-  CurrentPrice DECIMAL(10, 2),
+  sellPrice DECIMAL(10,2) NOT NULL,
+  buyPrice DECIMAL(10, 2) NOT NULL,
+  dailyChange DECIMAL(10, 2), NOT NULL,
   imageURL VARCHAR(2083) NOT NULL,
   PRIMARY KEY (id)
 );

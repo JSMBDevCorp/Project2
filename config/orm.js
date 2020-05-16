@@ -1,14 +1,16 @@
 // Import MySQL connection.
 var connection = require("../config/connection.js");
-
+const axios = require("axios");
+var queryStocks = [];
 var orm = {
     allStock: function(tableInput, cb) {
-      var queryString = "SELECT * FROM ??";
+      var queryString = "SELECT symbol FROM stockwatch";
         console.log(queryString)
         console.log(tableInput)
         connection.query(queryString, tableInput, function(err, result) {
         if (err) throw err;
-          cb(result)
+        getStockData(toArray(result), cb);
+        queryStocks=[];
       });
     },
     create: function(tableName, obj, cb){
@@ -43,7 +45,40 @@ var orm = {
       });
     },
 };
-  
+//One Async funtion to populate all the data in the array.
+function toArray(objArray){
+  var stocksArray = [];
+  for (var i = 0; i <objArray.length; i++){
+    stocksArray.push(objArray[i].symbol);;
+  } 
+  return stocksArray;
+};
+
+function convertToString(array){
+  var queryString = array[0];
+  for (var i = 1; i < array.length; i++){
+    queryString += ',' + array[i];
+  }
+  return queryString;
+}
+
+async function getStockData(arrayOfStocks, cb){
+  //var queryString = 'https://fmpcloud.io/api/v3/company/profile/' + symbol.toString().toUpperCase() + '?apikey=eb3eefc1b336a9ab7f2a8d082912d098';
+  //console.log(queryString);
+  for (const stock of arrayOfStocks){
+    var queryString = 'https://fmpcloud.io/api/v3/company/profile/' + stock.toString().toUpperCase() + '?apikey=eb3eefc1b336a9ab7f2a8d082912d098';
+    let res = await axios.get(queryString);
+    var stockObj = {};
+    stockObj.symbol = res.data.symbol;
+    stockObj.price = res.data.profile.price;
+    stockObj.companyName = res.data.profile.companyName;
+    stockObj.imageURL = res.data.profile.image;
+    stockObj.changes = res.data.profile.changes
+    queryStocks.push(stockObj);
+  }
+  cb(queryStocks);
+}
+
   
 // Export the orm object for the model (stock.js).
   module.exports = orm;
