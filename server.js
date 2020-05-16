@@ -16,8 +16,27 @@ app.use(express.json());
 // Express middleware for static files
 app.use(express.static("public"));
 
+https://www.youtube.com/watch?v=2BoSBaWvFhM
+var hbs = exphbs.create({
+    defaultLayout: "main",
+
+    helpers: {
+        getColor: function(changes){
+            if (changes > 0) {
+                return '#4caf50';  // green
+              }
+              else if (changes < 0){
+                return '#f44336';  // red
+              }
+              else {
+                return '#000000';  //black
+              }
+        }
+    }
+})
+
 // Set Handlebars as the default templating engine.
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.

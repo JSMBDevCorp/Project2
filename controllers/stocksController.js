@@ -6,6 +6,7 @@ var stocks = require("../models/stock.js");
 
 router.get("/", function(req, res) {
     stocks.allStock(function(data) {
+      console.log(data[0].changes)
       var stockObject = {
         stock: data
       };

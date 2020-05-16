@@ -18,15 +18,18 @@
                 <div class="stockpic">
                     <img class="center-align" src="{{imageURL}}" alt="stockLogo">
                 </div>
-                <div class="stocksymbol ">
+                <div class="stocksymbol">
                     {{symbol}}
                 </div>
-                <div class="stockprice ">
-                    ${{price}}
+
+                <div class="stockprice" style="color:{{getColor changes}}">
+                 
+                    {{price}}
+
                 </div>
-                <div class="stockarrow ">
+                {{!-- <div class="stockarrow ">
                     <img src="assets/images/arrow-up.png">
-                </div>
+                </div> --}}
             </div>
           </li>
         {{/each}}
