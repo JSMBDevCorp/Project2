@@ -94,8 +94,9 @@
 .stockpic img {
     height: 55px;
     width: 55px;
-    border-radius: 50%;
-    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    border: 1px solid #383838C;
+    object-fit: fill;
 }
 
 .stocksymbol {
