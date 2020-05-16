@@ -16,10 +16,10 @@ CREATE TABLE setLimit (
 -- Creates the table "stockwatch" within "stockwatch" database --
 CREATE TABLE stockwatch (
   id INTEGER NOT NULL AUTO_INCREMENT,
-  name VARCHAR(255) NOT NULL,
+  name VARCHAR(40),
   symbol VARCHAR(5),
+  price DECIMAL(7,2) NOT NULL,
   limitprice_id INTEGER(7),
-  currentPrice DECIMAL(10, 2) NOT NULL,
   imageURL VARCHAR(2083) NOT NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (limitprice_id) REFERENCES setLimit(id)
@@ -27,6 +27,26 @@ CREATE TABLE stockwatch (
 
 
 
+-- Jee's
+CREATE TABLE stockwatch (
+  id INTEGER NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  symbol VARCHAR(255) NOT NULL,
+  sellPrice DECIMAL(10,2) NOT NULL,
+  buyPrice DECIMAL(10, 2) NOT NULL,
+  dailyChange DECIMAL(10, 2), NOT NULL,
+  imageURL VARCHAR(2083) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE inRange (
+	id INTEGER NOT NULL AUTO_INCREMENT,
+    limitcross BOOLEAN,
+    PRIMARY KEY (id)
+    );
+
+ALTER TABLE stockwatch
+ADD FOREIGN KEY (limitprice_id) REFERENCES setLimit(id) ON UPDATE CASCADE;
 
 
 
