@@ -35,7 +35,7 @@ var orm = {
     },
     
     limitStock: function(tableOne, tableTwo, cb) {
-      var queryString = "SELECT symbol, name, imageURL, currentPrice, limitprice FROM stockwatch RIGHT JOIN setlimit ON stockwatch.limitprice_id = setlimit.id WHERE limitcross = true";
+      var queryString = "SELECT symbol, name, imageURL, price, limitprice FROM stockwatch RIGHT JOIN setlimit ON stockwatch.limitprice_id = setlimit.id WHERE limitcross = true";
         console.log(queryString)
         console.log(tableOne, tableTwo)
       connection.query(queryString, function(err, result) {
@@ -77,9 +77,14 @@ async function getStockData(arrayOfStocks, cb){
   for (const stock of arrayOfStocks){
     var queryString = 'https://fmpcloud.io/api/v3/company/profile/' + stock.toString().toUpperCase() + '?apikey=eb3eefc1b336a9ab7f2a8d082912d098';
     let res = await axios.get(queryString);
+
+    // https://www.w3schools.com/jsref/jsref_tofixed.asp
+    var axiosPrice = res.data.profile.price
+    var moneyPrice = axiosPrice.toFixed(2)
+
     var stockObj = {};
     stockObj.symbol = res.data.symbol;
-    stockObj.price = res.data.profile.price;
+    stockObj.price = moneyPrice;
     stockObj.companyName = res.data.profile.companyName;
     stockObj.imageURL = res.data.profile.image;
     stockObj.changes = res.data.profile.changes
