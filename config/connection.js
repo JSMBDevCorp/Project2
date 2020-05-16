@@ -1,6 +1,9 @@
 // add dependencies npm package mysql
 var mysql = require("mysql");
+<<<<<<< HEAD
+=======
 var connection;
+>>>>>>> 79901f5f8c82cb9d50b8982686f27840121d41ee
 
 
 if (process.env.JAWSDB_URL) {
