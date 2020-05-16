@@ -16,7 +16,7 @@ $(function() {
     }).then(
       function() {
         console.log("created new stock");
-        //location.href = "localhost:8080";  //blah!
+         //location.href = "localhost:8080";  //blah!
         // Reload the page to get the updated list
         //location.reload();  //** I want to serve back up the homepage, how to do that here? */
       }
