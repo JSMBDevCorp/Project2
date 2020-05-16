@@ -13,10 +13,10 @@ $(function() {
 
   //Functions for priceColor css colors ..https://www.w3schools.com/jquery/css_css.asp
   function green(){
-    $("#price").css({"color":"#4caf50 green"})
+    $(".stockprice").css({"color":"#4caf50 green"})
   }
   function red(){
-    $("#price").css({"color":"#f44336 red"})
+    $(".stockprice").css({"color":"#f44336 red"})
   }
 
   $(".create-form").on("submit", function(event) {
@@ -59,3 +59,5 @@ $(function() {
   });
 
 });
+
+
