@@ -13,6 +13,7 @@ var orm = {
         queryStocks=[];
       });
     },
+    
     create: function(tableName, obj, cb){
       //company name, symbol, limitprice, currentprice, imageurl
       var name = obj.companyName;
@@ -36,7 +37,7 @@ var orm = {
     },
     
     limitStock: function(tableOne, tableTwo, cb) {
-      var queryString = "SELECT symbol, name, imageURL, price, limitprice FROM stockwatch RIGHT JOIN setlimit ON stockwatch.limitprice_id = setlimit.id WHERE limitcross = true";
+      var queryString = "SELECT symbol, name, imageURL, currentPrice, limitprice FROM stockwatch RIGHT JOIN setlimit ON stockwatch.limitprice_id = setlimit.id WHERE limitcross = true";
         console.log(queryString)
         console.log(tableOne, tableTwo)
       connection.query(queryString, function(err, result) {
@@ -44,6 +45,17 @@ var orm = {
           cb(result)
       });
     },
+
+    delete: function(table, condition, cb) {
+    
+      connection.query(`DELETE FROM ${table} WHERE ${condition}`, function(err, result) {
+        if (err) {
+          throw err;
+        }
+  
+        cb(result);
+      });
+    }
 };
 //One Async funtion to populate all the data in the array.
 function toArray(objArray){

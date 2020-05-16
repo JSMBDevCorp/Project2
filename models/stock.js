@@ -17,6 +17,11 @@ var stock = {
         //var stockInfo = obj;
         getStockData(obj.symbol, obj, cb);
         //console.log(stockInfo);
+    },
+    delete: function(condition, cb) {
+      orm.delete("stockwatch", condition, function(res) {
+        cb(res);
+      });
     }
 };
 

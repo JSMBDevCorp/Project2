@@ -27,6 +27,11 @@ router.get("/limit", function(req, res) {
     res.render("limit", stockObject);
   });
 });
+
+router.get("/api", function(req, res) {
+  res.render("api");
+});
+
 router.post("/api/newStock", function(req, res){
   
   var obj = req.body;
@@ -38,5 +43,16 @@ router.post("/api/newStock", function(req, res){
   });
   console.log("Clicked on add stock");
 })
+
+router.delete("/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
+
+  console.log("yep");
+  stock.delete(condition, function(result){
+    
+      res.status(200).end();
+    
+  })
+});
 
 module.exports = router;
