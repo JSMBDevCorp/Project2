@@ -14,9 +14,9 @@ var stock = {
       });
     },
     create: function(obj, cb){
-        //var stockInfo = obj;
-        getStockData(obj.symbol, obj, cb);
-        //console.log(stockInfo);
+        orm.create("stockwatch", obj, function(res){
+          cb(res);
+        })
     },
     delete: function(condition, cb) {
       orm.delete("stockwatch", condition, function(res) {

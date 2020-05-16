@@ -1,6 +1,5 @@
 
-INSERT INTO setlimit (loggedprice, limitprice, limitcross)
-VALUES (435.55, 420.00, false),(310.13, 275.00, true),(1384.34, 1400.00, false), (72.32, 67.00, true);
+
 
 INSERT INTO stockwatch (symbol, name, limitprice_id, price, changes, imageURL)
 VALUES ("FB", "Facebook Inc.", null, 210.1, 4.07, "https://financialmodelingprep.com/images-New-jpg/AAPL.jpg"),
@@ -16,6 +15,16 @@ VALUES ("FB", "Facebook Inc.", null, 210.1, 4.07, "https://financialmodelingprep
 SELECT symbol, name, price, limitprice AS `Limit`
 FROM stockwatch
 RIGHT JOIN setlimit ON stockwatch.limitprice_id = setlimit.id WHERE limitcross = true;
+
+
+-- Use this here for a sample database
+INSERT INTO stockwatch (symbol, sellPrice, buyPrice)
+VALUES ( "FB", 300, 200),
+("AAPL", 300, 200),
+("NFLX", 300, 200), 
+("GOOGL", 300, 200);
+
+
 
 
 

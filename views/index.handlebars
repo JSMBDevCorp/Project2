@@ -9,18 +9,29 @@
           <li >
             <div class="stock valign-wrapper">
                 <div>
-                  <button class="delete" type="button" data-id="{{this.id}}" >Delete</button>
+
+                  <button class="delete" type="button" data-id="{{id}}">Delete</button>
+
                 </div>
+                <div>
+                  <button class="update" type="button" data-id="{{id}}">Update</button>
+                </div>
+
                 <div class="stockpic">
                     <img class="center-align" src="{{imageURL}}" alt="stockLogo">
                 </div>
                 <div class="stocksymbol">
                     {{symbol}}
                 </div>
+
                 <div class="stockprice" style="color:{{getColor changes}}">
                  
                     {{price}}
                  
+
+                <div class="stockprice ">
+                    ${{price}}
+
                 </div>
                 {{!-- <div class="stockarrow ">
                     <img src="assets/images/arrow-up.png">

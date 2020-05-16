@@ -34,15 +34,11 @@ router.get("/api", function(req, res) {
 });
 
 router.post("/api/newStock", function(req, res){
-  
   var obj = req.body;
   console.log(req.body);
-  
   stocks.create(obj, function(result){
-    console.log("Hello 27");
     res.json(result);
   });
-  console.log("Clicked on add stock");
 })
 
 router.delete("/:id", function(req, res) {
