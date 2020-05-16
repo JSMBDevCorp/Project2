@@ -19,23 +19,31 @@ $(function() {
     $("#price").css({"color":"#f44336 red"})
   }
 
+  $(".update").on("click", function(event) {
+    console.log("Clicked on update button");  //Why do all thse buttons log twice? adds the stocks twice and so on.
+  
+  });
+
+
+
   $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-
+    console.log("Clicked on submit");
     var newStock = {
       symbol: $("#stockSymbol").val().trim(),
-      maxPrice: $("#maxPrice").val().trim()
+      sellPrice: $("#sellPrice").val().trim(),
+      buyPrice: $("#buyPrice").val().trim()
     };
-    console.log(newStock);
     $.ajax("/api/newStock", {
       type: "POST",
       data: newStock
     }).then(
       function() {
         console.log("created new stock");
+        location.href = "localhost:8080";  //blah!
         // Reload the page to get the updated list
-        //location.reload();
+        //location.reload();  //** I want to serve back up the homepage, how to do that here? */
       }
     );
   });
