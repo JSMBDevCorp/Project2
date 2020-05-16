@@ -23,13 +23,13 @@ var hbs = exphbs.create({
     helpers: {
         getColor: function(changes){
             if (changes > 0) {
-                return 'green';
+                return '#4caf50';  // green
               }
               else if (changes < 0){
-                return 'red';
+                return '#f44336';  // red
               }
               else {
-                return 'black';
+                return '#000000';  //black
               }
         }
     }
