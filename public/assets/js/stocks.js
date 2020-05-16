@@ -1,24 +1,6 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
 
-  // Function to decide color for currentPrice value
-  function priceColor (change) {
-    if (change > 0 ) {
-      green (change)
-    }
-    else if (change < 0 ) {
-      red (change)
-    }
-  }
-
-  //Functions for priceColor css colors ..https://www.w3schools.com/jquery/css_css.asp
-  function green(){
-    $(".stockprice").css({"color":"#4caf50 green"})
-  }
-  function red(){
-    $(".stockprice").css({"color":"#f44336 red"})
-  }
-
   $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();

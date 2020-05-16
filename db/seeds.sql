@@ -11,6 +11,7 @@ VALUES ("FB", "Facebook Inc.", null, 210.1, 4.07, "https://financialmodelingprep
 ("AMD", "Advanced Micro Devices Inc.", 4, 52.12, -0.31, "https://financialmodelingprep.com/images-New-jpg/AMD.jpg"),
 ("TSLA", "Tesla Inc.", null, 750.77, -4.16, "https://financialmodelingprep.com/images-New-jpg/TSLA.jpg"),
 ("GM", "General Motors Company", null, 23.63, 0.32, "https://financialmodelingprep.com/images-New-jpg/GM.jpg"),
+("UA", "Under Armour, Inc.", null, 7.00, 0, "https://financialmodelingprep.com/images-New-jpg/UA.jpg"),
 ("JPM", "JPMorgan Chase & Co.", null, 93.7, 0, "https://financialmodelingprep.com/images-New-jpg/JPM.jpg");
 
 SELECT symbol, name, price, limitprice AS `Limit`
