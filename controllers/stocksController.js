@@ -30,6 +30,11 @@ router.get("/limit", function(req, res) {
     res.render("limit", stockObject);
   });
 });
+
+router.get("/newStock", function(req, res) {
+  res.render("newStock");
+});
+
 router.post("/api/newStock", function(req, res){
   
   var obj = req.body;
