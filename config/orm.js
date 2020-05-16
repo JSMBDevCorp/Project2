@@ -2,6 +2,7 @@
 var connection = require("../config/connection.js");
 const axios = require("axios");
 var queryStocks = [];  //This drives the display!
+
 var orm = {
     allStock: function(tableInput, cb) {
       var queryString = "SELECT symbol FROM stockwatch";
@@ -31,7 +32,6 @@ var orm = {
         cb(result);
       });
       //How to get the computer to go back to the main view?
-
     },
     
     limitStock: function(tableOne, tableTwo, cb) {
@@ -91,7 +91,9 @@ async function getStockData(arrayOfStocks, cb){
     queryStocks.push(stockObj);
   }
   cb(queryStocks);
-}
+};
+
+
 
   
 // Export the orm object for the model (stock.js).

@@ -9,12 +9,10 @@
           <li >
             <div class="stock valign-wrapper">
                 <div>
-
-                  <button class="delete" type="button" data-id="{{id}}">Delete</button>
-
+                  <button class="delete" type="button" data-id="{{symbol}}">Delete</button>
                 </div>
                 <div>
-                  <button class="update" type="button" data-id="{{id}}">Update</button>
+                  <button class="update" type="button" data-id="{{symbol}}">Update</button>
                 </div>
 
                 <div class="stockpic">
@@ -27,10 +25,6 @@
                 <div class="stockprice" style="color:{{getColor changes}}">
                  
                     {{price}}
-                 
-
-                <div class="stockprice ">
-                    ${{price}}
 
                 </div>
                 {{!-- <div class="stockarrow ">

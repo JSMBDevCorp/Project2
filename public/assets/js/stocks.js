@@ -20,8 +20,13 @@ $(function() {
   }
 
   $(".update").on("click", function(event) {
-    console.log("Clicked on update button");  //Why do all thse buttons log twice? adds the stocks twice and so on.
-  
+    //console.log(event.target.getAttribute('dataid'));
+    var id = $(this).data('id');
+    console.log(id);
+    //make a modal and take in two values sellprice and buyprice, wrap into an object
+    //make a put request and update the values in the database and also the stockdisplay
+    //array.
+    //then pull the 
   });
 
 
@@ -41,7 +46,7 @@ $(function() {
     }).then(
       function() {
         console.log("created new stock");
-        location.href = "localhost:8080";  //blah!
+        //location.href = "localhost:8080";  //blah!
         // Reload the page to get the updated list
         //location.reload();  //** I want to serve back up the homepage, how to do that here? */
       }
