@@ -1,36 +1,6 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
 
-  // Function to decide color for currentPrice value
-  function priceColor (change) {
-    if (change > 0 ) {
-      green (change)
-    }
-    else if (change < 0 ) {
-      red (change)
-    }
-  }
-
-  //Functions for priceColor css colors ..https://www.w3schools.com/jquery/css_css.asp
-  function green(){
-    $(".stockprice").css({"color":"#4caf50 green"})
-  }
-  function red(){
-    $(".stockprice").css({"color":"#f44336 red"})
-  }
-
-  $(".update").on("click", function(event) {
-    //console.log(event.target.getAttribute('dataid'));
-    var id = $(this).data('id');
-    console.log(id);
-    //make a modal and take in two values sellprice and buyprice, wrap into an object
-    //make a put request and update the values in the database and also the stockdisplay
-    //array.
-    //then pull the 
-  });
-
-
-
   $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();

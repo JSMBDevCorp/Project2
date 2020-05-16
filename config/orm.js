@@ -77,7 +77,7 @@ async function getStockData(arrayOfStocks, cb){
   for (const stock of arrayOfStocks){
     var queryString = 'https://fmpcloud.io/api/v3/company/profile/' + stock.toString().toUpperCase() + '?apikey=eb3eefc1b336a9ab7f2a8d082912d098';
     let res = await axios.get(queryString);
-
+    console.log(queryString)
     // https://www.w3schools.com/jsref/jsref_tofixed.asp
     var axiosPrice = res.data.profile.price
     var moneyPrice = axiosPrice.toFixed(2)
