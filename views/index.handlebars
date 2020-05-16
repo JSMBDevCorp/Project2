@@ -1,50 +1,78 @@
-<div class="row justify-content-center">
+<div class="valign-wrapper stockwatch">
+        <div class="valign" style="width:100%;">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m6 offset-m3">
+                        <div class="card">
+                            <div class="card-content center-align">
+                                <img src="assets/images/logo-horizontal.png">
+                                <h4 class="white-text">ALL STOCKS</h4>
+                               
+                             <!--TABLE HEADINGS-->
 
-  <div class="col-md-1 "> </div>
+                             <div class="headingbar"></div>
 
-  <div class="col-md-5 col-sm-12">
-    <h1>Stock Watchlist</h1>
-    <hr>
-    <!-- Bootstrap list group - basic example -->
-    <div class="row listCol">
-     <ul class="list-group ">
-        {{#each stock}}
-     <li >
-          <span>Stock Name: {{stockName}}</span>
-          <img src={{image}} alt="burger" >
-          <p>Price: ${{price}}</p>
-          <p>Stock Symbol: {{stockSymbol}}</p>
-           <hr>
-           </li>
-        {{/each}}
-      </ul>
-     
-        
+                             <!--START STOCK EXAMPLE-->
+                                <div class="stock valign-wrapper">
+                                    <div class="stockpic">
+                                        <img class="center-align" src="assets/images/Apple_gray_logo (1).png">
+                                    </div>
+                                    <div class="stocksymbol ">
+                                        AAPL
+                                    </div>
+                                    <div class="stockprice ">
+                                        $123
+                                    </div>
+                                    <div class="setlimit ">
+                                      <input type="submit" class="btn" value="Update">
+                                    </div>
+                                </div>
+                                <!--END STOCK EXAMPLE-->
+
+                                <!--START STOCK EXAMPLE-->
+                                <div class="stock valign-wrapper">
+                                    <div class="stockpic">
+                                        <img class="center-align" src="assets/images/microsoft-office-2013-professional-plus-vollversion-deutsch-32-64-bit-10-pc_2.jpg">
+                                    </div>
+                                    <div class="stocksymbol ">
+                                        MSFT
+                                    </div>
+                                    <div class="stockprice ">
+                                        $69
+                                    </div>
+                                    <div class="stockarrow ">
+                                        <img src="assets/images/arrow-down.png">
+                                    </div>
+                                </div>
+                                <!--END STOCK EXAMPLE-->
+
+                                <!--START STOCK EXAMPLE-->
+                                <div class="stock valign-wrapper">
+                                    <div class="stockpic">
+                                        <img class="center-align" src="assets/images/google-new-logo-1030x541.jpg">
+                                    </div>
+                                    <div class="stocksymbol ">
+                                        GOOG
+                                    </div>
+                                    <div class="stockprice ">
+                                        $420
+                                    </div>
+                                    <div class="stockarrow ">
+                                        <img src="assets/images/arrow-up.png">
+                                    </div>
+                                </div>
+                                <!--END STOCK EXAMPLE-->
+                                <form action="index.html">
+                                    <div class="card-action center-align">
+                                        <input type="submit" class="btn" value="Filter">
+                                        <input type="submit" class="btn" value="Add">
+                                    </div>
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-    
-  <div class="col-md-1 "> </div>
-</div>
-</div>
-
-
-
-
-
-<h2>Add A Stock</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="stockSymbol">Stock Symbol:</label>
-    
-    <input type="text" id="stockSymbol" name="name">
-    <label for="maxPrice">Enter Max Price:</label>
-    <input type="text" id="maxPrice" name="name">
-  </div>
-
-  <button type="submit">Add Stock</button>
-</form>
-
-
-  
-
