@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- Added link to the materialize CDN library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!-- Added link to the materialize Icon library -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <!-- Added link to the jQuery library -->
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <title>StockWATCH</title>
+    </head>
+    <body>
+        <main class="container-fluid" style="align-content: center">
+            <div class="valign-wrapper stockwatch">
+                <div class="valign" style="width:100%;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col s12 m6 offset-m3">
+                                {{{ body }}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    <!-- Compiled and minified materialize JavaScript at end of body for optimized loading -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/assets/js/stocks.js"></script>
+    </body>
+</html>

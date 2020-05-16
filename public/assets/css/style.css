@@ -1,0 +1,199 @@
+body {
+    background-color: #1c385f;
+}
+
+.stockwatch {
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/bkg.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+    margin: 0;
+    padding: 0;
+
+}
+
+.stockwatch img {
+    width: 60%;
+}
+
+.card {
+    background-color: rgb(0,0,0,0.7);
+    margin-top: 40px;
+}
+
+.card .card-content h4 {
+    text-transform: uppercase;
+}
+
+.card .card-content input {
+    background-color: #222222;
+    border-radius: 10px;
+    border-bottom: 1px solid #a4cd33;
+    color: #ffffff;
+}
+
+.card .card-content .browser-default {
+    background-color: #222222;
+    border-radius: 10px;
+    border-bottom: 1px solid #a4cd33;
+    color: #ffffff;
+}
+
+.card .card-content select{
+    border: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    height: 3.2rem;
+}
+
+.card .card-action input {
+    font-size: 1.7em;
+    height: 50px;
+    padding: 0px 40px;
+    border-radius: 30px;
+    background-color: #a4cd33;
+    color: #ffffff;
+}
+
+.heading {
+    width: 100%;
+    background: black;
+    height: 40px;
+    color: white;
+    font-size: 14px;
+}
+
+.heading-logo {
+    width: 20%;
+}
+
+.heading-symbol {
+    width: 30%;
+}
+
+.heading-price {
+    width: 25%;
+    margin-right: 10px;
+}
+
+.heading-button {
+    width: 10%;
+}
+
+.stock {
+    width: 100%;
+    height: 80px;
+    background: #2a2a2a;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.stockpic {
+    width: 20%;
+    height: 100%;
+    float: left;
+    margin-top: 25px;
+}
+
+.stockpic img {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    border: 1px solid #373737;
+}
+
+.stocksymbol {
+    width: 30%;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    float: left;
+}
+
+
+.stockbutton {
+    width: 10%;
+}
+
+
+.stockprice {
+    width: 25%;
+    float: left;
+    background-color: #000;
+    font-size: 24px;
+    border-radius: 20px; 
+    margin-right: 10px;
+    height: 40px
+
+}
+
+.stockarrow img {
+    width: 44px;
+    height: 44px;
+}
+
+.stockarrow {
+    width: 25%;
+    float: left;
+}
+
+.filterbutton {
+    background-color: #3455d0;
+    color: white;
+}
+
+.btn {
+    border-radius: 250px;
+    width: 140px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.btn-update {
+    border-radius: 20px;
+    color: black;
+    background: #4e81e9;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.btn-delete {
+    border-radius: 20px;
+    color: black;
+    background: #eb6060;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.btn-filter {
+    background-color: #a4cd33;
+    color: black;
+}
+
+.btn-add {
+    background-color: #3354cd;
+}
+
+.buttonfilter {
+    background-color: #3455d0;
+    color: white;
+    border-radius: 525px;
+    border: none;
+}
+
+.buttonadd {
+    border-radius: 525px;
+    border: none;
+}
+
+
+
