@@ -9,14 +9,14 @@ var stock = {
         });
     },
     limitStock: function(cb){
-      orm.limitStock("stockwatch", "setLimit", function(res) {
+      orm.limitStock("stockwatch", function(res) {
           cb(res);
       });
     },
     create: function(obj, cb){
-        //var stockInfo = obj;
-        getStockData(obj.symbol, obj, cb);
-        //console.log(stockInfo);
+        orm.create("stockwatch", obj, function(res){
+          cb(res);
+        })
     },
     delete: function(condition, cb) {
       orm.delete("stockwatch", condition, function(res) {

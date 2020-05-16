@@ -5,6 +5,7 @@ CREATE DATABASE stockwatch_db;
 -- Makes it so all of the following code will affect stockwatch --
 USE stockwatch_db;
 
+
 CREATE TABLE setLimit (
 	id INTEGER NOT NULL AUTO_INCREMENT,
     loggedprice DECIMAL(7,2) NULL,
@@ -28,21 +29,16 @@ CREATE TABLE stockwatch (
 
 
 
+
+
 -- Jee's
 CREATE TABLE stockwatch (
   id INTEGER NOT NULL AUTO_INCREMENT,
-  name VARCHAR(255) NOT NULL,
   symbol VARCHAR(255) NOT NULL,
-  sellPrice DECIMAL(10,2) NOT NULL,
-  buyPrice DECIMAL(10, 2) NOT NULL,
-  dailyChange DECIMAL(10, 2) NOT NULL,
-  imageURL VARCHAR(2083) NOT NULL,
+  sellPrice DECIMAL(10,2) NULL,
+  buyPrice DECIMAL(10, 2) NULL,
   PRIMARY KEY (id)
 );
-
-
-
-
 
 
 
