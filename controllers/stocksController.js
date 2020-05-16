@@ -44,7 +44,7 @@ router.delete("/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   console.log("yep");
-  stock.delete(condition, function(result){
+  stocks.delete(condition, function(result){
     
       res.status(200).end();
     
