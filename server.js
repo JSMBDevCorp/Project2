@@ -29,7 +29,7 @@ var hbs = exphbs.create({
                 return '#f44336';  // red
               }
               else {
-                return '#000000';  //black
+                return '#ffffff';  //white
               }
         }
     }

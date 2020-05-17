@@ -20,10 +20,11 @@ RIGHT JOIN setlimit ON stockwatch.limitprice_id = setlimit.id WHERE limitcross =
 
 -- Use this here for a sample database
 INSERT INTO stockwatch (symbol, sellPrice, buyPrice)
-VALUES ( "FB", 300, 200),
-("AAPL", 300, 200),
-("NFLX", 300, 200), 
-("GOOGL", 300, 200);
+VALUES ( "FB", 200, 150),
+("AAPL", 350, 310),
+("NFLX", 500, 400), 
+("GOOGL", 1350, 1250),
+("UA", null, null);
 
 
 

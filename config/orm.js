@@ -6,11 +6,11 @@ var queryStocks = [];  //This drives the display!
 var orm = {
     allStock: function(tableInput, cb) {
       var queryString = "SELECT symbol FROM stockwatch";
-        console.log(queryString)
-        console.log(tableInput)
+
         connection.query(queryString, tableInput, function(err, result) {
         if (err) throw err;
         getStockData(toArray(result), cb);
+        
         queryStocks=[];
       });
     },
@@ -44,14 +44,16 @@ var orm = {
       });
     },
 
-    delete: function(table, condition, cb) {
-    
-      connection.query(`DELETE FROM ${table} WHERE ${condition}`, function(err, result) {
+    delete: function(tableInput, delSymbol, cb) {
+      var queryString = "DELETE FROM ?? WHERE symbol = ?";
+
+      connection.query(queryString, [tableInput, delSymbol], function(err, result) {
         if (err) {
           throw err;
         }
   
         cb(result);
+
       });
     }
 };
@@ -77,7 +79,7 @@ async function getStockData(arrayOfStocks, cb){
   for (const stock of arrayOfStocks){
     var queryString = 'https://fmpcloud.io/api/v3/company/profile/' + stock.toString().toUpperCase() + '?apikey=eb3eefc1b336a9ab7f2a8d082912d098';
     let res = await axios.get(queryString);
-    console.log(queryString)
+
     // https://www.w3schools.com/jsref/jsref_tofixed.asp
     var axiosPrice = res.data.profile.price
     var moneyPrice = axiosPrice.toFixed(2)
@@ -93,8 +95,6 @@ async function getStockData(arrayOfStocks, cb){
   cb(queryStocks);
 };
 
-
-
-  
+ 
 // Export the orm object for the model (stock.js).
   module.exports = orm;
