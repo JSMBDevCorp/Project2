@@ -6,11 +6,11 @@ var stocks = require("../models/stock.js");
 
 router.get("/", function(req, res) {
     stocks.allStock(function(data) {
-      console.log(data[0].changes)
+      //console.log(data[0].changes)
       var stockObject = {
         stock: data
       };
-      console.log(stockObject)
+      //console.log(stockObject)
     //   return res.json(stockObject);
       res.render("index", stockObject);
     });
@@ -18,13 +18,10 @@ router.get("/", function(req, res) {
 
 router.get("/limit", function(req, res) {
   stocks.limitStock(function(data) {
-
-      // console.log(data[0])
+    console.log(data); //log out the data that gets returned by the callback.
     var stockObject = {
       stock: data
     };
-    console.log(stockObject.stock[1])
-  //   return res.json(stockObject);
     res.render("limit", stockObject);
   });
 });
@@ -43,13 +40,11 @@ router.post("/api/newStock", function(req, res){
 
 router.delete("/:id", function(req, res) {
   var condition = "id = " + req.params.id;
-
   console.log("yep");
   stocks.delete(condition, function(result){
     
       res.status(200).end();
-    
-  })
+  });
 });
 
 module.exports = router;
