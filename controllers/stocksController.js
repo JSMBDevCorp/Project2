@@ -6,12 +6,12 @@ var stocks = require("../models/stock.js");
 
 router.get("/", function(req, res) {
     stocks.allStock(function(data) {
-     
+
       var stockObject = {
         stock: data
       };
       console.log(stockObject)
-   
+
       res.render("index", stockObject);
     });
 });
