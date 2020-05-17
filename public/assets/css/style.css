@@ -139,7 +139,17 @@ h5 {
     border-radius: 20px; 
     margin-right: 10px;
     height: 40px
+}
 
+.stockprice-limit {
+    width: 25%;
+    float: left;
+    background-color: #000;
+    color: #FFF;
+    font-size: 24px;
+    border-radius: 20px; 
+    margin-right: 10px;
+    height: 40px
 }
 
 .currentprice {
