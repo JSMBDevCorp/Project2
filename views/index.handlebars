@@ -1,72 +1,62 @@
 <div class="card">
-  <div class="card-content center-align">
-      <img src="assets/images/logo-horizontal.png">
-      <h4 class="white-text">ALL STOCKS</h4>
-      
+    <div class="card-content center-align">
+        <img src="assets/images/logo-horizontal.png">
+        <h4 class="white-text">ALL STOCKS</h4>
 
-<div class="heading valign-wrapper">
-               <div class="heading-logo">
-                    LOGO
-                </div>
-                <div class="heading-symbol">
-                   SYMBOL
-                </div>
-
-                <div class="heading-price">
-                    PRICE
-                </div>
-
-                <div class="heading-button">
-                  UPDATE
-                </div>
-                <div class="heading-button">
-                 DELETE
-                </div>
-
-</div>
-
-      <!--START STOCK EXAMPLE-->
-      <ul class="list-group ">
-        {{#each stock}}
-          <li >
-            <div class="stock valign-wrapper">
-
-                <div class="stockpic">
-                    <img class="center-align" src="{{imageURL}}" alt="stockLogo">
-                </div>
-                <div class="stocksymbol">
-                    {{symbol}}
-                </div>
-
-                <div class="stockprice" style="color:{{getColor changes}}">
-                 
-                    {{price}}
-
-                </div>
-
-                <div class="stockbutton">
-                  <button class="update btn-update" type="button" data-id="{{symbol}}"><i class="small material-icons">settings</i></button>
-                </div>
-
-                
-                <div class="stockbutton">
-                  <button class="delete btn-delete" type="button" data-id="{{this.symbol}}"><i class="small material-icons">remove_circle</i></button>
-                </div>
-                {{!-- <div class="stockarrow ">
-                    <img src="assets/images/arrow-up.png">
-                </div> --}}
+        {{!-- HEADER ROW --}}
+        <div class="heading valign-wrapper">
+            <div class="heading-logo">
+                LOGO
             </div>
-          </li>
-        {{/each}}
-      </ul>
-      <!--END STOCK EXAMPLE-->
-      
-      <form action="index.html">
-          <div class="card-action center-align">
-              <a href="/limit"><button type="button" class="btn btn-filter">Filter</button></a>
-              <a href="/api"><button type="button" class="btn btn-add">Add</button></a>
-          </div>
-      </form>
-  </div>
+            <div class="heading-symbol">
+                SYMBOL
+            </div>
+            <div class="heading-price">
+                PRICE
+            </div>
+            <div class="heading-button">
+                UPDATE
+            </div>
+            <div class="heading-button">
+                DELETE
+            </div>
+        </div>
+
+        <!--START STOCK EXAMPLE-->
+        <ul class="list-group ">
+            {{#each stock}}
+                <li >
+                    <div class="stock valign-wrapper">
+                        <div class="stockpic">
+                            <img class="center-align" src="{{imageURL}}" alt="stockLogo">
+                        </div>
+                        <div class="stocksymbol">
+                            {{symbol}}
+                        </div>
+                        <div class="stockprice" style="color:{{getColor changes}}">
+                            {{price}}
+                        </div>
+                        <div class="stockbutton">
+                            <button class="update btn-update" type="button" data-id="{{symbol}}"><i class="small material-icons">settings</i></button>
+                        </div>
+                        <div class="stockbutton">
+                            <button class="delete btn-delete" type="button" data-id="{{this.symbol}}"><i class="small material-icons">remove_circle</i></button>
+                        </div>
+                        {{!-- <div class="stockarrow ">
+                            <img src="assets/images/arrow-up.png">
+                        </div> --}}
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+        <!--END STOCK EXAMPLE-->
+
+        {{!-- <form action="index.html"> --}}
+            <div class="card-action center-align">
+                <a href="/limit"><button type="button" class="btn btn-filter">Filter</button></a>
+                <a href="/api"><button type="button" class="btn btn-add">Add</button></a>
+            </div>
+        {{!-- </form> --}}
+    </div>
 </div>
 
