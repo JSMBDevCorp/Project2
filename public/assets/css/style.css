@@ -75,6 +75,13 @@ h5 {
     font-size: 14px;
 }
 
+footer {
+    width: 100%;
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+
 .heading-logo {
     width: 20%;
 }
