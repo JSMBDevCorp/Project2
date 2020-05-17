@@ -23,7 +23,8 @@ INSERT INTO stockwatch (symbol, sellPrice, buyPrice)
 VALUES ( "FB", 300, 200),
 ("AAPL", 300, 200),
 ("NFLX", 300, 200), 
-("GOOGL", 300, 200);
+("GOOGL", 1350, 1250),
+("UA", null, null);
 
 
 
