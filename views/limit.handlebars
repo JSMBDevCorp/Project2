@@ -39,20 +39,21 @@
                         <div class="stockarrow">
                             <img src="{{getArrow price sellPrice buyPrice}}">
                         </div>
-                        <div class="stockprice-limit">
-                            {{buyPrice}} | {{sellPrice}}
+                        <div class="limitprice">
+                            {{buyPrice}} <br> {{sellPrice}}
+                        </div>
+                        <div class="stockbutton">
+                            <button class="update btn-update" type="button" data-id="{{symbol}}"><i class="small material-icons">settings</i></button>
                         </div>
                     </div>
                 </li>
             {{/each}}
         </ul>
-
         <!--ROUTE BUTTONS-->
         <div class="card-action center-align">
             <a href="/"><button type="button" class="btn">All</button></a>
             <a href="/api"><button type="button" class="btn">Add</button></a>
         </div>
-      
     </div>
 </div>
 
