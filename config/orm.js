@@ -6,7 +6,7 @@ var queryStocks = [];  //This drives the display!
 var orm = {
     allStock: function(tableInput, cb) {
       var queryString = "SELECT symbol FROM stockwatch";
-   
+
         connection.query(queryString, tableInput, function(err, result) {
         if (err) throw err;
         getStockData(toArray(result), cb);
@@ -53,6 +53,7 @@ var orm = {
         }
   
         cb(result);
+
       });
     }
 };

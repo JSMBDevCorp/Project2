@@ -23,7 +23,7 @@ router.get("/limit", function(req, res) {
       stock: data
     };
     console.log(stockObject.stock[1])
- 
+
     res.render("limit", stockObject);
   });
 });
