@@ -10,6 +10,7 @@ VALUES ("FB", "Facebook Inc.", null, 210.1, 4.07, "https://financialmodelingprep
 ("AMD", "Advanced Micro Devices Inc.", 4, 52.12, -0.31, "https://financialmodelingprep.com/images-New-jpg/AMD.jpg"),
 ("TSLA", "Tesla Inc.", null, 750.77, -4.16, "https://financialmodelingprep.com/images-New-jpg/TSLA.jpg"),
 ("GM", "General Motors Company", null, 23.63, 0.32, "https://financialmodelingprep.com/images-New-jpg/GM.jpg"),
+("UA", "Under Armour, Inc.", null, 7.00, 0, "https://financialmodelingprep.com/images-New-jpg/UA.jpg"),
 ("JPM", "JPMorgan Chase & Co.", null, 93.7, 0, "https://financialmodelingprep.com/images-New-jpg/JPM.jpg");
 
 SELECT symbol, name, price, limitprice AS `Limit`
@@ -19,10 +20,11 @@ RIGHT JOIN setlimit ON stockwatch.limitprice_id = setlimit.id WHERE limitcross =
 
 -- Use this here for a sample database
 INSERT INTO stockwatch (symbol, sellPrice, buyPrice)
-VALUES ( "FB", 300, 200),
-("AAPL", 300, 200),
-("NFLX", 300, 200), 
-("GOOGL", 300, 200);
+VALUES ( "FB", 200, 150),
+("AAPL", 350, 310),
+("NFLX", 500, 400), 
+("GOOGL", 1350, 1250),
+("UA", null, null);
 
 
 

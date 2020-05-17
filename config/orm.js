@@ -8,12 +8,10 @@ var orm = {
     allStock: function(tableInput, cb) {
       queryStocks=[];
       var queryString = "SELECT * FROM stockwatch";
-        //console.log(queryString)
-        //console.log(tableInput)
-        connection.query(queryString, tableInput, function(err, result) {  //pulled from the database
-        if (err) throw err;
-        getStockData(result, cb);
-        //console.log(queryStocks);
+
+      connection.query(queryString, tableInput, function(err, result) {
+      if (err) throw err;
+      getStockData(result, cb);
       });
     },
     
@@ -46,14 +44,16 @@ var orm = {
       });*/
     },
 
-    delete: function(table, condition, cb) {
-    
-      connection.query(`DELETE FROM ${table} WHERE ${condition}`, function(err, result) {
+    delete: function(tableInput, delSymbol, cb) {
+      var queryString = "DELETE FROM ?? WHERE symbol = ?";
+
+      connection.query(queryString, [tableInput, delSymbol], function(err, result) {
         if (err) {
           throw err;
         }
   
         cb(result);
+
       });
     }
 };
@@ -62,6 +62,7 @@ var orm = {
 function filterStocks(queryStocks){
   filterDisplay = [];
   queryStocks.forEach(stock => {
+    console.log(stock.sellPrice);
     if (parseFloat(stock.price) < stock.buyPrice || parseFloat(stock.price) > stock.sellPrice){
       filterDisplay.push(stock);
     }
@@ -83,7 +84,8 @@ async function getStockData(arrayOfStocks, cb){
   for (const stock of arrayOfStocks){
     var queryString = 'https://fmpcloud.io/api/v3/company/profile/' + stock.symbol.toString().toUpperCase() + '?apikey=eb3eefc1b336a9ab7f2a8d082912d098';
     let res = await axios.get(queryString);
-
+    console.log("Let's check the stock!");
+    console.log(stock);
     // https://www.w3schools.com/jsref/jsref_tofixed.asp
     var axiosPrice = res.data.profile.price;
     var moneyPrice = axiosPrice.toFixed(2);
@@ -101,8 +103,6 @@ async function getStockData(arrayOfStocks, cb){
   cb(queryStocks);
 };
 
-
-
-  
+ 
 // Export the orm object for the model (stock.js).
   module.exports = orm;
