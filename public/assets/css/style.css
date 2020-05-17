@@ -1,10 +1,23 @@
+body {
+    background-image: url("../images/bkg.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+}
+
+h1 {
+    font-weight: bold;
+    color: white;
+}
+
+.updatelogo {
+    border-radius: 30px;
+    width: 120px;
+    height: 120px;
+}
+
 .stockwatch {
     width: 100%;
     height: 100%;
-    background-image: url("../images/bkg.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-
 }
 
 .stockwatch img {
@@ -123,6 +136,16 @@
     margin-right: 10px;
     height: 40px
 
+}
+
+.currentprice {
+    width: 60%;
+    text-align: center;
+    height: 50px;
+    background-color: #000;
+    color: white;
+    font-size: 18px;
+    border-radius: 30px;
 }
 
 .stockarrow img {
