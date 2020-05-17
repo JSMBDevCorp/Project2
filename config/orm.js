@@ -2,16 +2,16 @@
 var connection = require("../config/connection.js");
 const axios = require("axios");
 var queryStocks = [];  //This drives the display!
+var filterDisplay = []; //This drives the filtered stocks!
 
 var orm = {
     allStock: function(tableInput, cb) {
-      var queryString = "SELECT symbol FROM stockwatch";
+      queryStocks=[];
+      var queryString = "SELECT * FROM stockwatch";
 
-        connection.query(queryString, tableInput, function(err, result) {
-        if (err) throw err;
-        getStockData(toArray(result), cb);
-        
-        queryStocks=[];
+      connection.query(queryString, tableInput, function(err, result) {
+      if (err) throw err;
+      getStockData(result, cb);
       });
     },
     
@@ -24,8 +24,8 @@ var orm = {
       queryString += " (symbol, sellPrice, buyPrice)";
       queryString += "VALUES (\"";
       queryString +=  symbol.toString()  + '",';
-      queryString +=  buyPrice + ',';
-      queryString +=  sellPrice + ');';
+      queryString +=  sellPrice + ',';
+      queryString +=  buyPrice + ');';
       console.log(queryString);
       connection.query(queryString, function(err, result){
         if (err) throw err;
@@ -34,14 +34,14 @@ var orm = {
       //How to get the computer to go back to the main view?
     },
     
-    limitStock: function(tableOne, tableTwo, cb) {
-      var queryString = "SELECT symbol, name, imageURL, price, limitprice FROM stockwatch RIGHT JOIN setlimit ON stockwatch.limitprice_id = setlimit.id WHERE limitcross = true";
-        console.log(queryString)
-        console.log(tableOne, tableTwo)
+    limitStock: function(tableName, cb) {
+      filterStocks(queryStocks);
+      cb(filterDisplay);
+      /*
       connection.query(queryString, function(err, result) {
         if (err) throw err;
           cb(result)
-      });
+      });*/
     },
 
     delete: function(tableInput, delSymbol, cb) {
@@ -57,15 +57,20 @@ var orm = {
       });
     }
 };
-
-//One Async funtion to populate all the data in the array.
-function toArray(objArray){
-  var stocksArray = [];
-  for (var i = 0; i <objArray.length; i++){
-    stocksArray.push(objArray[i].symbol);;
-  } 
-  return stocksArray;
+//filterStocks(queryStocks);
+//Need to Check this with some actual values.
+function filterStocks(queryStocks){
+  filterDisplay = [];
+  queryStocks.forEach(stock => {
+    console.log(stock.sellPrice);
+    if (parseFloat(stock.price) < stock.buyPrice || parseFloat(stock.price) > stock.sellPrice){
+      filterDisplay.push(stock);
+    }
+  });
+  console.log("Stocks in the filtered array");
+  console.log(filterDisplay);
 };
+
 
 function convertToString(array){
   var queryString = array[0];
@@ -74,17 +79,20 @@ function convertToString(array){
   }
   return queryString;
 }
-
+//Ok! One can do it here!
 async function getStockData(arrayOfStocks, cb){
   for (const stock of arrayOfStocks){
-    var queryString = 'https://fmpcloud.io/api/v3/company/profile/' + stock.toString().toUpperCase() + '?apikey=eb3eefc1b336a9ab7f2a8d082912d098';
+    var queryString = 'https://fmpcloud.io/api/v3/company/profile/' + stock.symbol.toString().toUpperCase() + '?apikey=eb3eefc1b336a9ab7f2a8d082912d098';
     let res = await axios.get(queryString);
-
+    console.log("Let's check the stock!");
+    console.log(stock);
     // https://www.w3schools.com/jsref/jsref_tofixed.asp
-    var axiosPrice = res.data.profile.price
-    var moneyPrice = axiosPrice.toFixed(2)
-
+    var axiosPrice = res.data.profile.price;
+    var moneyPrice = axiosPrice.toFixed(2);
     var stockObj = {};
+    stockObj.sellPrice = stock.sellPrice;
+    stockObj.buyPrice = stock.buyPrice;
+    
     stockObj.symbol = res.data.symbol;
     stockObj.price = moneyPrice;
     stockObj.companyName = res.data.profile.companyName;
