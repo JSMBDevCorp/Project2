@@ -63,7 +63,7 @@ function filterStocks(queryStocks){
   filterDisplay = [];
   queryStocks.forEach(stock => {
     console.log(stock.sellPrice);
-    if (parseFloat(stock.price) < stock.buyPrice || parseFloat(stock.price) > stock.sellPrice){
+    if (parseFloat(stock.price) < stock.buyPrice && stock.buyPrice != null || parseFloat(stock.price) > stock.sellPrice && stock.sellPrice != null){
       filterDisplay.push(stock);
     }
   });

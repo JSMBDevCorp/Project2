@@ -1,59 +1,59 @@
 <div class="card">
-  <div class="card-content center-align">
-      <img src="assets/images/logo-horizontal.png">
-      <h4 class="white-text">LIMIT STOCKS</h4>
-      
-<div class="heading valign-wrapper">
-               <div class="heading-logo">
-                    LOGO
-                </div>
-                <div class="heading-symbol">
-                   SYMBOL
-                </div>
+    <div class="card-content center-align">
+        <img src="assets/images/logo-horizontal.png">
+        <h4 class="white-text">LIMIT STOCKS</h4>
 
-                <div class="heading-price">
-                    PRICE
-                </div>
-
-                <div class="heading-button">
-                  BUY/SELL
-                </div>
-                <div class="heading-button">
-                 LIMITS
-                </div>
-
-</div>
-
-      <!--START STOCK EXAMPLE-->
-      <ul class="list-group ">
-        {{#each stock}}
-          <li >
-            <div class="stock valign-wrapper">
-                <div class="stockpic">
-                    <img class="center-align" src="{{imageURL}}" alt="stockLogo">
-                </div>
-                <div class="stocksymbol ">
-                    {{symbol}}
-                </div>
-                <div class="stockprice-limit ">
-                    {{price}}
-                </div>
-                <div class="stockarrow ">
-                    <img src="assets/images/arrow-up.png">
-                </div>
-                {{limitprice}}
+        {{!-- TABLE HEADER ROW --}}
+        <div class="heading valign-wrapper">
+            <div class="heading-logo">
+                LOGO
             </div>
-          </li>
-        {{/each}}
-      </ul>
-      <!--END STOCK EXAMPLE-->
-      <form action="index.html">
-          <div class="card-action center-align">
-              <a href="/"><button type="button" class="btn">All</button></a>
-              <a href="/api"><button type="button" class="btn">Add</button></a>
-          </div>
-      </form>
-      
-  </div>
+            <div class="heading-symbol">
+                SYMBOL
+            </div>
+            <div class="heading-price">
+                PRICE
+            </div>
+            <div class="heading-button">
+                BUY/SELL
+            </div>
+            <div class="heading-button">
+                LIMITS
+            </div>
+        </div>
+
+        <!-- STOCK ITEM LIST-->
+        <ul class="list-group ">
+            {{#each stock}}
+                <li>
+                    <div class="stock valign-wrapper">
+                        <div class="stockpic">
+                            <img class="center-align" src="{{imageURL}}" alt="stockLogo">
+                        </div>
+                        <div class="stocksymbol">
+                            {{symbol}}
+                        </div>
+                        <div class="stockprice-limit" style="color:{{getColor changes}}">
+                            {{price}}
+                        </div>
+                        <div class="stockarrow">
+                            <img src="{{getArrow price sellPrice buyPrice}}">
+                        </div>
+                        <div class="limitprice">
+                            {{buyPrice}} <br> {{sellPrice}}
+                        </div>
+                        <div class="stockbutton">
+                            <button class="update btn-update" type="button" data-id="{{symbol}}"><i class="small material-icons">settings</i></button>
+                        </div>
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+        <!--ROUTE BUTTONS-->
+        <div class="card-action center-align">
+            <a href="/"><button type="button" class="btn">All</button></a>
+            <a href="/api"><button type="button" class="btn">Add</button></a>
+        </div>
+    </div>
 </div>
 

@@ -4,11 +4,22 @@ $(function() {
   $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
+    var sellLimit = $("#sellPrice").val().trim();
+    var buyLimit = $("#buyPrice").val().trim();
+    
+    // validation for sellLimit and buyLimit
+    if (sellLimit == ""){
+      sellLimit = "null"
+    }
+    if (buyLimit == ""){
+      buyLimit = "null"
+    }
+
     console.log("Clicked on submit");
     var newStock = {
       symbol: $("#stockSymbol").val().trim(),
-      sellPrice: $("#sellPrice").val().trim(),
-      buyPrice: $("#buyPrice").val().trim()
+      sellPrice: sellLimit,
+      buyPrice: buyLimit
     };
     $.ajax("/api/newStock", {
       type: "POST",
