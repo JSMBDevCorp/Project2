@@ -23,14 +23,23 @@ var hbs = exphbs.create({
     helpers: {
         getColor: function(changes){
             if (changes > 0) {
-                return '#4caf50';  // green
+                return "#4caf50";  // green
               }
               else if (changes < 0){
-                return '#f44336';  // red
+                return "#f44336";  // red
               }
               else {
-                return '#ffffff';  //white
+                return "#ffffff";  //white
               }
+        },
+
+        getArrow: function(price, sellPrice, buyPrice){
+          if (price > sellPrice) {
+            return "assets/images/arrow-up.png";
+          }
+          else if (price < buyPrice){
+            return "assets/images/arrow-down.png";
+          }
         }
     }
 })
