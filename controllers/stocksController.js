@@ -32,6 +32,17 @@ router.get("/api", function(req, res) {
   res.render("api");
 });
 
+router.get("/api/updateStock", function(req, res){
+  /*var obj = req.body;
+  console.log(req.body);
+  stocks.create(obj, function(result){
+    res.json(result);
+  });*/
+  res.render("update");
+});
+
+//Now a post request to a router "api/updateStock" to send it information.
+
 router.post("/api/newStock", function(req, res){
   var obj = req.body;
   console.log(req.body);
