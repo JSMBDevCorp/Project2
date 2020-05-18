@@ -14,7 +14,6 @@ $(function() {
     if (buyLimit == ""){
       buyLimit = "null"
     }
-
     console.log("Clicked on submit");
     var newStock = {
       symbol: $("#stockSymbol").val().trim(),
@@ -44,13 +43,31 @@ $(function() {
   Step 6:  Update the user that the price has been changed.  
   Once a stock is clicked, then I write a for loop to find it on the allstocks array
 
-  
+
   */
+  $(".update").on('click', function(event){
+    event.preventDefault();
+    console.log("Clicked on update!")
+    var id = $(this).data('id');
+    console.log(id);
+    var updateStock = {name:id};
+    $.ajax("/api/updateStock", {
+      type: "GET",
+      data: updateStock
+    }).then(function(req, res){
+      //window.location.assign("/api/updateStock");
+    })
+    //console.log(queryStocks);
+    //Now make a post request to the server and look through the queryStocks array for
+    //that stock object and give it to update.handlebars to render.
+
+    //then in the update.handbars, once clicked update, we make the change to the actual data
+    //base.  DONE!
+  })
 
 
-
-
-  //updating a stock.
+  /*
+  //updating a stock (This is for the udpating page.)
   $(".update-form").on("click", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
@@ -69,7 +86,7 @@ $(function() {
         console.log("created new stock");
       }
     );
-  });
+  });*/
 
 
   //Delete stock item
@@ -77,7 +94,7 @@ $(function() {
     // Make sure to preventDefault on a click event.
     event.preventDefault();
     var id = $(this).data('id');
-
+    console.log(id);
     // send the delete request.
     $.ajax("/" + id, {
       type: "DELETE",

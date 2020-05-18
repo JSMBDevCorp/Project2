@@ -6,12 +6,10 @@ var stocks = require("../models/stock.js");
 
 router.get("/", function(req, res) {
     stocks.allStock(function(data) {
-
       var stockObject = {
         stock: data
       };
-      console.log(stockObject)
-
+      //console.log(stockObject)
       res.render("index", stockObject);
     });
 });
@@ -22,8 +20,6 @@ router.get("/limit", function(req, res) {
     var stockObject = {
       stock: data
     };
-    console.log(stockObject.stock[1])
-
     res.render("limit", stockObject);
   });
 });
@@ -31,14 +27,14 @@ router.get("/limit", function(req, res) {
 router.get("/api", function(req, res) {
   res.render("api");
 });
-
+//render the update stock page:
 router.get("/api/updateStock", function(req, res){
-  /*var obj = req.body;
-  console.log(req.body);
-  stocks.create(obj, function(result){
-    res.json(result);
-  });*/
-  res.render("update");
+  var stockToUpdate = req.query.name;
+  console.log(stockToUpdate);
+  stocks.updateStock(stockToUpdate, function(result){ //result is the object
+    console.log(result);
+  });
+  
 });
 
 //Now a post request to a router "api/updateStock" to send it information.
