@@ -37,11 +37,19 @@ var orm = {
     limitStock: function(tableName, cb) {
       filterStocks(queryStocks);
       cb(filterDisplay);
-      /*
-      connection.query(queryString, function(err, result) {
-        if (err) throw err;
-          cb(result)
-      });*/
+    },
+    //Here I need to find the object as an array and give it back to cb.
+    updateStock: function(stockToUpdate, cb){
+      //console.log(stockToUpdate);  //try logging this!
+      var correctStock = {};
+      queryStocks.forEach(stock =>{
+        if (stock.symbol == stockToUpdate){
+          correctStock = stock;
+        }
+      });
+      // console.log("in orm:")
+      //console.log(correctStock);
+      cb(correctStock);
     },
 
     delete: function(tableInput, delSymbol, cb) {
@@ -55,10 +63,25 @@ var orm = {
         cb(result);
 
       });
+    },
+    updateOneStock: function(obj){
+      var queryString = "UPDATE stockwatch";
+      queryString +=" SET ";
+      queryString += "sellPrice" 
+      queryString += "=" + parseFloat(obj.sellPrice);
+      queryString += ", buyPrice = ";
+      queryString +=  parseFloat(obj.buyPrice);
+      queryString +=" WHERE symbol";
+      queryString += "= '" + obj.symbol.toLowerCase() + "'";
+      console.log(queryString);
+      
+      connection.query(queryString, function(err, result) {
+        if (err) {
+          throw err;
+        }
+       });
     }
 };
-//filterStocks(queryStocks);
-//Need to Check this with some actual values.
 function filterStocks(queryStocks){
   filterDisplay = [];
   queryStocks.forEach(stock => {
@@ -84,8 +107,8 @@ async function getStockData(arrayOfStocks, cb){
   for (const stock of arrayOfStocks){
     var queryString = 'https://fmpcloud.io/api/v3/company/profile/' + stock.symbol.toString().toUpperCase() + '?apikey=eb3eefc1b336a9ab7f2a8d082912d098';
     let res = await axios.get(queryString);
-    console.log("Let's check the stock!");
-    console.log(stock);
+    //console.log("Let's check the stock!");
+    //console.log(stock);
     // https://www.w3schools.com/jsref/jsref_tofixed.asp
     var axiosPrice = res.data.profile.price;
     var moneyPrice = axiosPrice.toFixed(2);

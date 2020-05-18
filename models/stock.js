@@ -10,7 +10,8 @@ var stock = {
     },
     limitStock: function(cb){
       orm.limitStock("stockwatch", function(res) {
-          cb(res);
+        //console.log(res);  
+        cb(res);
       });
     },
     create: function(obj, cb){
@@ -22,6 +23,16 @@ var stock = {
       orm.delete("stockwatch", condition, function(res) {
         cb(res);
       });
+    },
+    updateStock: function(stockToUpdate, cb){
+      orm.updateStock(stockToUpdate, function(res){
+        // console.log("in models");
+        //console.log(res);
+        cb(res);
+      })
+    },
+    updateOneStock: function(obj){
+      orm.updateOneStock(obj);
     }
 };
 

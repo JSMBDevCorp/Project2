@@ -1,22 +1,27 @@
 <div class="card">
   <div class="card-content center-align">
-    <img src="assets/images/logo.png">
+    <img class="center-align" src="{{imageURL}}" alt="stockLogo">
     <h4 class="white-text">ADD Stock</h4>
-    <form class="create-form">
+    <form class="update-form">
       <div class="row">
-          <div class="input-field col s12">
-              <input placeholder="STOCK SYMBOL" id="stockSymbol" type="text" class="validate center-align">
+          <div class="stocksymbol">
+            {{symbol}}
           </div>
       </div>
 
       <div class="row">
-          <div class="input-field col s12">
-              <input placeholder="SELL PRICE" id="sellPrice" type="text" class="validate center-align">
+          <div class="stockprice" style="color:{{getColor changes}}">
+            {{price}}
           </div>
       </div>
       <div class="row">
           <div class="input-field col s12">
-              <input placeholder="BUY PRICE" id="buyPrice" type="text" class="validate center-align">
+              <input placeholder="NEW SELL PRICE" id="newSellPrice" type="text" class="validate center-align">
+          </div>
+      </div>
+      <div class="row">
+          <div class="input-field col s12">
+              <input placeholder="NEW BUY PRICE" id="newBuyPrice" type="text" class="validate center-align">
           </div>
       </div>
           
