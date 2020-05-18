@@ -6,7 +6,6 @@ $(function() {
     event.preventDefault();
     var sellLimit = $("#sellPrice").val().trim();
     var buyLimit = $("#buyPrice").val().trim();
-    
     // validation for sellLimit and buyLimit
     if (sellLimit == ""){
       sellLimit = "null"
@@ -20,7 +19,7 @@ $(function() {
       sellPrice: sellLimit,
       buyPrice: buyLimit
     };
-    $.ajax("/api/newStock", {
+    $.ajax("/api/addOneStock", {
       type: "POST",
       data: newStock
     }).then(

@@ -4,21 +4,24 @@
         <h4 class="white-text">LIMIT STOCKS</h4>
 
         {{!-- TABLE HEADER ROW --}}
-        <div class="heading valign-wrapper">
-            <div class="heading-logo">
+        <div class="heading limit valign-wrapper">
+            <div class="heading-logo-limit">
                 LOGO
             </div>
-            <div class="heading-symbol">
+            <div class="heading-symbol-limit">
                 SYMBOL
             </div>
-            <div class="heading-price">
+            <div class="heading-price-limit">
                 PRICE
             </div>
-            <div class="heading-button">
+            <div class="heading-arrow">
                 BUY/SELL
             </div>
-            <div class="heading-button">
+              <div class="heading-button">
                 LIMITS
+            </div>
+            <div class="heading-button">
+                UPDATE
             </div>
         </div>
 
@@ -26,14 +29,14 @@
         <ul class="list-group ">
             {{#each stock}}
                 <li>
-                    <div class="stock valign-wrapper">
+                    <div class="stock limit valign-wrapper">
                         <div class="stockpic">
                             <img class="center-align" src="{{imageURL}}" alt="stockLogo">
                         </div>
                         <div class="stocksymbol">
                             {{symbol}}
                         </div>
-                        <div class="stockprice-limit" style="color:{{getColor changes}}">
+                        <div class="stockprice" style="color:{{getColor changes}}">
                             {{price}}
                         </div>
                         <div class="stockarrow">
@@ -43,7 +46,7 @@
                             {{buyPrice}} <br> {{sellPrice}}
                         </div>
                         <div class="stockbutton">
-                            <button class="" type="button" data-id="{{symbol}}"><i class="small material-icons">settings</i></button>
+                            <button class="update btn-update" type="button" data-id="{{symbol}}"><i class="small material-icons">settings</i></button>
                         </div>
                     </div>
                 </li>
@@ -51,8 +54,8 @@
         </ul>
         <!--ROUTE BUTTONS-->
         <div class="card-action center-align">
-            <a href="/"><button type="button" class="btn">All</button></a>
-            <a href="/api"><button type="button" class="btn">Add</button></a>
+            <a href="/"><button type="button" class="btn btn-filter">View All</button></a>
+            <a href="/api"><button type="button" class="btn btn-add">Add</button></a>
         </div>
     </div>
 </div>

@@ -4,33 +4,74 @@
       background-color: #000; 
     }
     .stockwatch .card img {
-        width: 60%
+        width: 60%;
     }
+
     .card .card-content {
         padding:0px;
     }
     .stocksymbol {
         font-size: 11px;;
     }
-    .stockprice {
-        font-size: 10px;
-        line-height: 3.5;
+       .stockprice {
+        font-size: 16px;
+        line-height: 2.6;
+    }
+    .limit .stockprice {
+        font-size: 13px;
+        line-height: 3.3;
     }
     .heading {
         font-size: 11px;
     }
-    .stockpic img{
-        height: 30px;
-        margin-top: 13px;
+    .stockpic img {
+        height: 55px;
+        width: 55px;
     }
+    
+
     .stockprice-limit{
         width: 30%;
         line-height: 2.1;
         font-size: 16px;
     }
+    .heading-button {
+        width: 17%;
+    }
+    .btn-update {
+        width: 37px;
+        height: 37px;
+        margin-right: 10px;
+    }
+    .btn-delete {
+        width: 37px;
+        height: 37px;
+        margin-right: 5px;
+    }
+    .heading {
+        font-size: 10px;
+    }
+    .limit .heading-logo-limit, .limit .heading-symbol-limit, .limit .heading-price-limit, .limit .heading-arrow, .limit .heading-button, .limit .heading-button {
+        width: 16.66%;
+        margin: 0;
+        font-size: 12px;
+    }
+    .limitprice {
+        font-size: 14px;
+    }
     
+   
+}
+
+
+@media (max-width: 600px) {
+  .sitelogo {
+      width: 70%;
+  }
 
 }
+
+
 @media (min-width: 440px) {
     .stocksymbol {
         font-size: 18px;;
@@ -42,7 +83,11 @@
     .heading {
         font-size: 14px;
     }
+    .stockwatch .card img {
+        width: 60%;
+    }
 }
+
 
 @media (min-width: 768px) {
     body {
@@ -50,31 +95,68 @@
         background-size: cover;
         background-repeat: repeat;
     }
-    .stockwatch .card img {
-        width: 30%
-    }
+
     .card .card-content {
         padding:24px;
     }
     .stocksymbol {
         font-size: 24px;;
     }
-    .stockprice {
-        font-size: 18px;
-        line-height: 2.3;
+    
+    .heading-price {
+        font-size: 16px;
+        margin-right: 5%;
     }
+
     .heading {
         font-size: 16px;
     }
-    .stockpic img{
-        height: 45px;
-        margin-top: 5px;
+    .index .heading-logo, .index .heading-symbol, .index .heading-price, .index .heading-button, .index .heading-button {
+        font-size: 16px;
+
     }
+    .stockpic img {
+        height: 60px;
+        width: 60px;
+    }
+
     .stockprice-limit{
         width: 15%;
         font-size: 18px;
         
     }
+    .limit .stockprice {
+        font-size: 18px;
+        line-height: 2.4;
+    }
+    
+    .heading-button {
+        width: 15%;
+    }
+    .btn-update {
+        width: 40px;
+        height: 40px;
+        margin-right: -11px;
+    }
+    .btn-delete {
+        width: 40px;
+        height: 40px;
+        margin-right: -8px;
+    }
+    .heading {
+        font-size: 11px;
+    }
+    .limit .heading-logo-limit, .limit .heading-symbol-limit, .limit .heading-price-limit, .limit .heading-arrow, .limit .heading-button, .limit .heading-button {
+        width: 16.66%;
+        margin: 0;
+        font-size: 16px;
+    }
+    .limitprice {
+        font-size: 18px;
+    }
+    
+    
+    
 }
 @media (min-width: 992px) {
     .stockprice{

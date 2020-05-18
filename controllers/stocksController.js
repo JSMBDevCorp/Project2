@@ -51,6 +51,13 @@ router.post("/api/newStock", function(req, res){
   res.end();
 });
 
+router.post("/api/addOneStock", function(req, res){
+  stocks.create(req.body, function(result){
+    console.log("logging right before the create function");
+    console.log(result);
+  })
+})
+
 router.put("/api/updateBuySell", function(req, res) {
   console.log("condition");
 });
