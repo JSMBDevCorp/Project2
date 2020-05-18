@@ -1,11 +1,16 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
+
   //adding a stock to the watch list.
   $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
+
+    console.log("Clicked on submit");
+    var symbolcheck = $("#stockSymbol").val().trim();
     var sellLimit = $("#sellPrice").val().trim();
     var buyLimit = $("#buyPrice").val().trim();
+
     // validation for sellLimit and buyLimit
     if (sellLimit == ""){
       sellLimit = "null"
@@ -13,21 +18,27 @@ $(function() {
     if (buyLimit == ""){
       buyLimit = "null"
     }
-    console.log("Clicked on submit");
-    var newStock = {
-      symbol: $("#stockSymbol").val().trim(),
-      sellPrice: sellLimit,
-      buyPrice: buyLimit
-    };
+    
+    // Ajax new stock
+    if (symbolcheck !="") {
+        var newStock = {
+            symbol: symbolcheck,
+            sellPrice: sellLimit,
+            buyPrice: buyLimit
+        };
     $.ajax("/api/addOneStock", {
       type: "POST",
       data: newStock
     }).then(
-      function() {
-        alert(newStock.symbol + " has been added to your stock watchlist.")
-        console.log("created new stock");
-      }
-    );
+        function() {
+          alert(newStock.symbol + " has been added to your stock watchlist.")
+          console.log("created new stock");
+        }
+      );
+    }
+    else {
+    console.log("STOCK SYMBOL NOT ENTERED")
+    }
   });
   $(".update.btn-update").on('click', function(event){
     event.preventDefault();
@@ -49,8 +60,17 @@ $(function() {
     event.preventDefault();
     var sellLimit = $("#newSellPrice").val().trim();
     var buyLimit = $("#newBuyPrice").val().trim();
+    console.log("s63")
     console.log(sellLimit);
     
+    // validation for sellLimit and buyLimit
+    if (sellLimit == ""){
+        sellLimit = "null"
+    }
+    if (buyLimit == ""){
+        buyLimit = "null"
+    }
+
     var newStock = {
       
       sellPrice: sellLimit,
