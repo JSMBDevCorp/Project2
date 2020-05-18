@@ -13,9 +13,9 @@
     .stocksymbol {
         font-size: 11px;;
     }
-    .stockprice {
-        font-size: 12px;
-        line-height: 3.4;
+       .stockprice {
+        font-size: 16px;
+        line-height: 2.6;
     }
     .limit .stockprice {
         font-size: 13px;
