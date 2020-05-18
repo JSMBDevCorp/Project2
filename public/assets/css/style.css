@@ -248,6 +248,7 @@ width: 16.7%;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .btn-delete {
@@ -261,6 +262,7 @@ width: 16.7%;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .btn-filter {
