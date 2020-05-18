@@ -5,57 +5,6 @@ var queryStocks = [];  //This drives the display!
 var filterDisplay = []; //This drives the filtered stocks!
 
 var orm = {
-<<<<<<< HEAD
-    allStock: function(tableInput, cb) {
-        queryStocks=[];
-        var queryString = "SELECT * FROM stockwatch";
-
-        connection.query(queryString, tableInput, function(err, result) {
-        if (err) throw err;
-        getStockData(result, cb);
-        });
-    },
-    
-    create: function(tableName, obj, cb){
-        var symbol = obj.symbol;
-        var buyPrice = obj.buyPrice;
-        var sellPrice = obj.sellPrice;
-        var imageURL = obj.image;
-        var queryString = "INSERT INTO " + tableName.toString();
-        queryString += " (symbol, sellPrice, buyPrice)";
-        queryString += "VALUES (\"";
-        queryString +=  symbol.toString()  + '",';
-        queryString +=  sellPrice + ',';
-        queryString +=  buyPrice + ');';
-        console.log(queryString);
-        connection.query(queryString, function(err, result){
-          if (err) throw err;
-          cb(result);
-      });
-      //How to get the computer to go back to the main view?
-    },
-    
-    limitStock: function(tableName, cb) {
-      filterStocks(queryStocks);
-      cb(filterDisplay);
-    },
-    //Here I need to find the object as an array and give it back to cb.
-    updateStock: function(stockToUpdate, cb){
-      //console.log(stockToUpdate);  //try logging this!
-      var correctStock = {};
-      queryStocks.forEach(stock =>{
-        if (stock.symbol == stockToUpdate){
-          correctStock = stock;
-        }
-      });
-      // console.log("in orm:")
-      //console.log(correctStock);
-      cb(correctStock);
-    },
-
-    delete: function(tableInput, delSymbol, cb) {
-      var queryString = "DELETE FROM ?? WHERE symbol = ?";
-=======
   allStock: function(tableInput, cb) {
     queryStocks=[];
     var queryString = "SELECT * FROM stockwatch";
@@ -85,7 +34,6 @@ var orm = {
     filterStocks(queryStocks);
     cb(filterDisplay);
   },
->>>>>>> 1716ae94cc3b8c29836ee0c930e021a862cbdb04
 
   updateStock: function(stockToUpdate, cb){
     var correctStock = {};
