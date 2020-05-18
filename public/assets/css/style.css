@@ -162,6 +162,9 @@ h5 {
     justify-content: center;
     align-items: center;
 }
+.limit .stockpic, .limit .stocksymbol, .limit .stockprice, .limit .stockarrow, .limit .limitprice, .limit .stockbutton {
+width: 16.7%;
+}
 
 
 .stockprice {
@@ -222,12 +225,15 @@ h5 {
     background-color: #3455d0;
     color: white;
 }
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+    margin-right: 0;
+}
 
 .btn {
     border-radius: 250px;
     width: 140px;
     height: 40px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
 }
 
@@ -242,6 +248,7 @@ h5 {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .btn-delete {
@@ -255,6 +262,7 @@ h5 {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .btn-filter {

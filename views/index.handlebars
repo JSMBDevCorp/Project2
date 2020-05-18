@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <!--START STOCK EXAMPLE-->
+        <!-- STOCK LIST-->
         <ul class="list-group ">
             {{#each stock}}
                 <li >
@@ -46,14 +46,12 @@
                 </li>
             {{/each}}
         </ul>
-        <!--END STOCK EXAMPLE-->
-
-        {{!-- <form action="index.html"> --}}
-            <div class="card-action center-align">
-                <a href="/limit"><button type="button" class="btn btn-filter">Filter</button></a>
-                <a href="/api"><button type="button" class="btn btn-add">Add</button></a>
-            </div>
-        {{!-- </form> --}}
+        
+        <!--ROUTE BUTTONS-->
+        <div class="card-action center-align">
+            <a href="/limit"><button type="button" class="btn btn-filter">Filter</button></a>
+            <a href="/api"><button type="button" class="btn btn-add">Add</button></a>
+        </div>
     </div>
 </div>
 

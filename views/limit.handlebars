@@ -1,14 +1,14 @@
 <div class="card">
     <div class="card-content center-align">
-        <img class="sitelogo" src="assets/images/logo-horizontal.png">
+        <img src="assets/images/logo-horizontal.png">
         <h4 class="white-text">LIMIT STOCKS</h4>
 
         {{!-- TABLE HEADER ROW --}}
-        <div class="heading valign-wrapper">
-            <div class="heading-logo">
+        <div class="heading limit valign-wrapper">
+            <div class="heading-logo-limit">
                 LOGO
             </div>
-            <div class="heading-symbol">
+            <div class="heading-symbol-limit">
                 SYMBOL
             </div>
             <div class="heading-price-limit">
@@ -29,7 +29,7 @@
         <ul class="list-group ">
             {{#each stock}}
                 <li>
-                    <div class="stock valign-wrapper">
+                    <div class="stock limit valign-wrapper">
                         <div class="stockpic">
                             <img class="center-align" src="{{imageURL}}" alt="stockLogo">
                         </div>
@@ -43,7 +43,7 @@
                             <img src="{{getArrow price sellPrice buyPrice}}">
                         </div>
                         <div class="limitprice">
-                            {{buyPrice}} <br> {{sellPrice}}
+                            {{sellPrice}} <br> {{buyPrice}}
                         </div>
                         <div class="stockbutton">
                             <button class="update btn-update" type="button" data-id="{{symbol}}"><i class="small material-icons">settings</i></button>

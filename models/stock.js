@@ -10,7 +10,8 @@ var stock = {
     },
     limitStock: function(cb){
       orm.limitStock("stockwatch", function(res) {
-          cb(res);
+        //console.log(res);  
+        cb(res);
       });
     },
     create: function(obj, cb){
@@ -29,6 +30,9 @@ var stock = {
         //console.log(res);
         cb(res);
       })
+    },
+    updateOneStock: function(obj){
+      orm.updateOneStock(obj);
     }
 };
 
