@@ -1,8 +1,6 @@
 // add dependencies npm package mysql
 var mysql = require("mysql");
 var connection;
-
-
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
@@ -14,7 +12,6 @@ if (process.env.JAWSDB_URL) {
     database: "stockwatch_db"
   });
 };
-
 // Make connection.
 connection.connect(function(err) {
   if (err) {
