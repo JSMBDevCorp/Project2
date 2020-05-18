@@ -6,30 +6,30 @@ var filterDisplay = []; //This drives the filtered stocks!
 
 var orm = {
     allStock: function(tableInput, cb) {
-      queryStocks=[];
-      var queryString = "SELECT * FROM stockwatch";
+        queryStocks=[];
+        var queryString = "SELECT * FROM stockwatch";
 
-      connection.query(queryString, tableInput, function(err, result) {
-      if (err) throw err;
-      getStockData(result, cb);
-      });
+        connection.query(queryString, tableInput, function(err, result) {
+        if (err) throw err;
+        getStockData(result, cb);
+        });
     },
     
     create: function(tableName, obj, cb){
-      var symbol = obj.symbol;
-      var buyPrice = obj.buyPrice;
-      var sellPrice = obj.sellPrice;
-      var imageURL = obj.image;
-      var queryString = "INSERT INTO " + tableName.toString();
-      queryString += " (symbol, sellPrice, buyPrice)";
-      queryString += "VALUES (\"";
-      queryString +=  symbol.toString()  + '",';
-      queryString +=  sellPrice + ',';
-      queryString +=  buyPrice + ');';
-      console.log(queryString);
-      connection.query(queryString, function(err, result){
-        if (err) throw err;
-        cb(result);
+        var symbol = obj.symbol;
+        var buyPrice = obj.buyPrice;
+        var sellPrice = obj.sellPrice;
+        var imageURL = obj.image;
+        var queryString = "INSERT INTO " + tableName.toString();
+        queryString += " (symbol, sellPrice, buyPrice)";
+        queryString += "VALUES (\"";
+        queryString +=  symbol.toString()  + '",';
+        queryString +=  sellPrice + ',';
+        queryString +=  buyPrice + ');';
+        console.log(queryString);
+        connection.query(queryString, function(err, result){
+          if (err) throw err;
+          cb(result);
       });
       //How to get the computer to go back to the main view?
     },
