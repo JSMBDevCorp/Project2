@@ -3,9 +3,7 @@
     body {
       background-color: #000; 
     }
-    .stockwatch .card img {
-        width: 60%
-    }
+
     .card .card-content {
         padding:0px;
     }
@@ -19,10 +17,7 @@
     .heading {
         font-size: 11px;
     }
-    .stockpic img{
-        height: 30px;
-        margin-top: 13px;
-    }
+
     .stockprice-limit{
         width: 30%;
         line-height: 2.1;
@@ -31,6 +26,16 @@
     
 
 }
+
+
+@media (max-width: 600px) {
+  .sitelogo {
+      width: 70%;
+  }
+
+}
+
+
 @media (min-width: 440px) {
     .stocksymbol {
         font-size: 18px;;
@@ -50,9 +55,7 @@
         background-size: cover;
         background-repeat: repeat;
     }
-    .stockwatch .card img {
-        width: 30%
-    }
+
     .card .card-content {
         padding:24px;
     }
@@ -60,16 +63,17 @@
         font-size: 24px;;
     }
     .stockprice {
-        font-size: 18px;
-        line-height: 2.3;
+        margin-right: 5%;
     }
+    .heading-price {
+        font-size: 16px;
+        margin-right: 5%;
+    }
+
     .heading {
         font-size: 16px;
     }
-    .stockpic img{
-        height: 45px;
-        margin-top: 5px;
-    }
+
     .stockprice-limit{
         width: 15%;
         font-size: 18px;
