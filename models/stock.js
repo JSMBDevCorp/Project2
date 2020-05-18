@@ -22,6 +22,13 @@ var stock = {
       orm.delete("stockwatch", condition, function(res) {
         cb(res);
       });
+    },
+    updateStock: function(stockToUpdate, cb){
+      orm.updateStock(stockToUpdate, function(res){
+        // console.log("in models");
+        //console.log(res);
+        cb(res);
+      })
     }
 };
 

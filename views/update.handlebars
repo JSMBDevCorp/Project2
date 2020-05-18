@@ -1,30 +1,33 @@
 <div class="card">
-  <div class="card-content center-align">
-    <img src="assets/images/logo.png">
-    <h4 class="white-text">ADD Stock</h4>
-    <form class="create-form">
-      <div class="row">
-          <div class="input-field col s12">
-              <input placeholder="STOCK SYMBOL" id="stockSymbol" type="text" class="validate center-align">
-          </div>
-      </div>
-
-      <div class="row">
-          <div class="input-field col s12">
-              <input placeholder="SELL PRICE" id="sellPrice" type="text" class="validate center-align">
-          </div>
-      </div>
-      <div class="row">
-          <div class="input-field col s12">
-              <input placeholder="BUY PRICE" id="buyPrice" type="text" class="validate center-align">
-          </div>
-      </div>
-          
-      </div>
-      <div class="card-action center-align">
-          <!--Need to link it back to homepage-->
-          <a href="/"><button type="button" class="btn">All</button></a>
-          <a href="/"><button type="submit" class="btn" id="btn">Submit</button></a>
-      </div>
-    </form>
+    <div class="card-content center-align">
+        <img id="stockImage" class="center-align" alt="stockLogo">
+        <h4 class="white-text">Update Stock</h4>
+        <div class="row">
+            <div class="stocksymbol">
+                {{symbol}}
+            </div>
+        </div>
+        <form class="update-form">
+            <div class="row">
+                <div class="stockprice" style="color:{{getColor changes}}">
+                    {{price}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="NEW BUY PRICE" id="newBuyPrice" type="text" class="validate center-align">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="NEW SELL PRICE" id="newSellPrice" type="text" class="validate center-align">
+                </div>
+            </div>
+            <div class="card-action center-align">
+                <!--Need to link it back to homepage-->
+                <a href="/"><button type="button" class="btn">All</button></a>
+                <button type="submit" class="btn" id="btn">Submit</button>
+            </div>
+        </form>
+    </div>
 </div>

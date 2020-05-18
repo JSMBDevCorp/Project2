@@ -37,14 +37,11 @@
                             {{price}}
                         </div>
                         <div class="stockbutton">
-                            <button class="update btn-update" type="button" data-id="{{symbol}}"><i class="small material-icons">settings</i></button>
+                            <a href="/api/updateStock/{{this.symbol}}"><button class="update btn-update" type="button" data-id="{{this.symbol}}" data-price = "{{price}}"><i class="small material-icons">settings</i></button></a>
                         </div>
                         <div class="stockbutton">
                             <button class="delete btn-delete" type="button" data-id="{{this.symbol}}"><i class="small material-icons">cancel</i></button>
                         </div>
-                        {{!-- <div class="stockarrow ">
-                            <img src="assets/images/arrow-up.png">
-                        </div> --}}
                     </div>
                 </li>
             {{/each}}
