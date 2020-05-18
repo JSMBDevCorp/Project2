@@ -30,22 +30,7 @@ $(function() {
       }
     );
   });
-  /*
-  Once the update button is clicked, then a grab the prices and symbol of said stock by finding
-  it in the all stocks array and put it in an update object, so write a function that starts with
-  initially making the update object empty, 
-  Step 1:  Once clicked, then grab that update object.
-  Step 2:  Put such in a global update object (this should use a method and at the start should
-    make the updateobject empty)
-  Step 3:  Driving the update page using that update object (Just the picture and current price)
-  Step 4:  Render such page.
-  Step 5:  Write a post request for the submit button of the update object to change the database.
-  Step 6:  Update the user that the price has been changed.  
-  Once a stock is clicked, then I write a for loop to find it on the allstocks array
-
-
-  */
-  $(".update").on('click', function(event){
+  $(".update.btn-update").on('click', function(event){
     event.preventDefault();
     console.log("Clicked on update!")
     var id = $(this).data('id');
@@ -55,40 +40,52 @@ $(function() {
       type: "GET",
       data: updateStock
     }).then(function(req, res){
-      //window.location.assign("/api/updateStock");
+      console.log(res);
+      window.location.assign("/api/updateStockNow");
+      
     })
-    //console.log(queryStocks);
-    //Now make a post request to the server and look through the queryStocks array for
-    //that stock object and give it to update.handlebars to render.
-
-    //then in the update.handbars, once clicked update, we make the change to the actual data
-    //base.  DONE!
-  })
-
-
-  /*
-  //updating a stock (This is for the udpating page.)
-  $(".update-form").on("click", function(event) {
+  });
+  $(".update-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-    var id = $(this).data('id');  //Check this, logs it so we get the id which is the stock symbol.
-
+    var sellLimit = $("#newSellPrice").val().trim();
+    var buyLimit = $("#newBuyPrice").val().trim();
+    console.log(sellLimit);
+    
     var newStock = {
-      sellPrice: $("#newSellPrice").val().trim(),
-      buyPrice: $("#newBuyPrice").val().trim()
+      
+      sellPrice: sellLimit,
+      buyPrice: buyLimit
     };
-    $.ajax("/api/updateStock", {
-      type: "GET",
+
+    $.ajax("/api/newStock", {
+      type: "POST",
       data: newStock
     }).then(
-      function() {
-        alert(newStock.symbol + " has been updated to your stock watchlist.")
-        console.log("created new stock");
+      function(req, res) {
+        alert("stock is updated.")
+        //console.log(res);
       }
     );
+  });
+  /*
+  $(".btn").on("click", function(event){
+    event.preventDefault();
+    var sellLimit = $("#newSellPrice").val().trim();
+    var buyLimit = $("#newBuyPrice").val().trim();
+    var updateObj={
+      newSellPrice: sellLimit,
+      newBuyPrice: buyLimit
+    };
+    console.log(updateObj);
+    $.ajax("/api/newStock", {
+      type: "POST",
+      data:updateObj
+    }).then(){
+      alert("Buy and Sell prices are updated.");
+    }
+
   });*/
-
-
   //Delete stock item
   $(".delete").on("click", function(event) {
     // Make sure to preventDefault on a click event.

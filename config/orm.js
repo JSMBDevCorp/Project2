@@ -63,6 +63,23 @@ var orm = {
         cb(result);
 
       });
+    },
+    updateOneStock: function(obj){
+      var queryString = "UPDATE stockwatch";
+      queryString +=" SET ";
+      queryString += "sellPrice" 
+      queryString += "=" + parseFloat(obj.sellPrice);
+      queryString += ", buyPrice = ";
+      queryString +=  parseFloat(obj.buyPrice);
+      queryString +=" WHERE symbol";
+      queryString += "= '" + obj.symbol.toLowerCase() + "'";
+      console.log(queryString);
+      
+      connection.query(queryString, function(err, result) {
+        if (err) {
+          throw err;
+        }
+       });
     }
 };
 function filterStocks(queryStocks){

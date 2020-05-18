@@ -30,6 +30,9 @@ var stock = {
         //console.log(res);
         cb(res);
       })
+    },
+    updateOneStock: function(obj){
+      orm.updateOneStock(obj);
     }
 };
 
