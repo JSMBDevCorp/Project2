@@ -51,6 +51,7 @@ router.post("/api/addOneStock", function(req, res){
   stocks.create(req.body, function(result){
     console.log("logging right before the create function");
     console.log(result);
+    res.end();
   })
 })
 

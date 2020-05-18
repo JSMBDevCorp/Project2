@@ -30,7 +30,7 @@ $(function() {
                 type: "POST",
                 data: newStock
             }).then(
-                function() {
+                function(req, res) {
                 alert(newStock.symbol + " has been added to your stock watchlist.")
                 console.log("created new stock");
                 }

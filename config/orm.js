@@ -13,7 +13,7 @@ var orm = {
       getStockData(result, cb);
     });
   },
-   create: function(tableName, obj, cb){
+  create: function(tableName, obj, cb){
     var symbol = obj.symbol;
     var buyPrice = obj.buyPrice;
     var sellPrice = obj.sellPrice;
@@ -64,7 +64,6 @@ var orm = {
     queryString +=" WHERE symbol";
     queryString += "= '" + obj.symbol.toLowerCase() + "'";
     console.log(queryString);
-    
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
