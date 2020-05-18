@@ -18,6 +18,7 @@ app.use(express.static("public"));
 
 https://www.youtube.com/watch?v=2BoSBaWvFhM
 var hbs = exphbs.create({
+<<<<<<< HEAD
     defaultLayout: "main",
 
     helpers: {
@@ -41,8 +42,31 @@ var hbs = exphbs.create({
                 return "assets/images/arrow-down.png";
             }
         }
+=======
+  defaultLayout: "main",
+  helpers: {
+    getColor: function(changes){
+      if (changes > 0) {
+        return "#4caf50";  // green
+      }
+      else if (changes < 0){
+        return "#f44336";  // red
+      }
+      else {
+        return "#ffffff";  //white
+      }
+    },
+    getArrow: function(price, sellPrice, buyPrice){
+      if (price > sellPrice) {
+        return "assets/images/arrow-up.png";
+      }
+      else if (price < buyPrice){
+        return "assets/images/arrow-down.png";
+      }
+>>>>>>> 29c063e8a9a652f54ecde677cd9fbe49109f9ab4
     }
-})
+  }
+});
 
 // Set Handlebars as the default templating engine.
 app.engine("handlebars", hbs.engine);
