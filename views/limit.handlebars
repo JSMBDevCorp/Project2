@@ -11,14 +11,17 @@
             <div class="heading-symbol">
                 SYMBOL
             </div>
-            <div class="heading-price">
+            <div class="heading-price-limit">
                 PRICE
             </div>
-            <div class="heading-button">
+            <div class="heading-arrow">
                 BUY/SELL
             </div>
-            <div class="heading-button">
+              <div class="heading-button">
                 LIMITS
+            </div>
+            <div class="heading-button">
+                UPDATE
             </div>
         </div>
 
@@ -33,7 +36,7 @@
                         <div class="stocksymbol">
                             {{symbol}}
                         </div>
-                        <div class="stockprice-limit" style="color:{{getColor changes}}">
+                        <div class="stockprice" style="color:{{getColor changes}}">
                             {{price}}
                         </div>
                         <div class="stockarrow">
@@ -51,8 +54,8 @@
         </ul>
         <!--ROUTE BUTTONS-->
         <div class="card-action center-align">
-            <a href="/"><button type="button" class="btn">All</button></a>
-            <a href="/api"><button type="button" class="btn">Add</button></a>
+            <a href="/"><button type="button" class="btn btn-filter">View All</button></a>
+            <a href="/api"><button type="button" class="btn btn-add">Add</button></a>
         </div>
     </div>
 </div>
