@@ -30,7 +30,7 @@ router.get("/api/updateStock", function(req, res){
     res.render("update", result);
   });
 });
-router.get("/api/updateStockNow",function(req, res){
+router.get("/updateStockNow",function(req, res){
   res.render("update", stockToServe);
 });
 router.post("/api/newStock", function(req, res){
