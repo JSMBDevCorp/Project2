@@ -62,10 +62,11 @@ $(function() {
         var buyLimit = $("#newBuyPrice").val().trim();
         
         // validation for sellLimit and buyLimit
-        if (sellLimit == ""){
+        if (sellLimit == "" || isNaN(sellLimit)){
             sellLimit = "null"
         }
-        if (buyLimit == ""){
+        console.log(sellLimit);
+        if (buyLimit == "" || isNaN(buyLimit)){
             buyLimit = "null"
         }
 
