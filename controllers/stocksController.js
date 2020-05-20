@@ -39,6 +39,7 @@ router.post("/api/newStock", function(req, res){
   obj.sellPrice = req.body.sellPrice;
   obj.buyPrice = req.body.buyPrice;
   console.log(obj);
+  console.log(obj.sellPrice)
   stocks.updateOneStock(obj);
   res.end();
 });

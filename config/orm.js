@@ -58,9 +58,9 @@ var orm = {
     var queryString = "UPDATE stockwatch";
     queryString +=" SET ";
     queryString += "sellPrice" 
-    queryString += "=" + parseFloat(obj.sellPrice);
+    queryString += "=" + obj.sellPrice;
     queryString += ", buyPrice = ";
-    queryString +=  parseFloat(obj.buyPrice);
+    queryString +=  obj.buyPrice;
     queryString +=" WHERE symbol";
     queryString += "= '" + obj.symbol.toLowerCase() + "'";
     console.log(queryString);
@@ -75,7 +75,7 @@ function filterStocks(queryStocks){
   filterDisplay = [];
   queryStocks.forEach(stock => {
     console.log(stock.sellPrice);
-    if (parseFloat(stock.price) < stock.buyPrice && stock.buyPrice != null || parseFloat(stock.price) > stock.sellPrice && stock.sellPrice != null){
+    if (stock.price < stock.buyPrice && stock.buyPrice != null || stock.price > stock.sellPrice && stock.sellPrice != null){
       filterDisplay.push(stock);
     }
   });

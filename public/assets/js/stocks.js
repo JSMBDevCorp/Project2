@@ -45,7 +45,6 @@ $(function() {
         event.preventDefault();
         console.log("Clicked on update!")
         var id = $(this).data('id');
-        console.log(id)
         var updateStock = {name:id};
         $.ajax("/api/updateStock", {
             type: "GET",
