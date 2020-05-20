@@ -136,7 +136,7 @@ h5 {
     height: 55px;
     width: 55px;
     border-radius: 5px;
-    border: 1px solid #383838C;
+    border: 1px solid #383838;
     object-fit: fill;
 }
 
@@ -146,6 +146,16 @@ h5 {
     font-size: 22px;
     font-weight: bold;
     float: left;
+}
+
+.stockSymbolUpdate {
+    display: inline-block;
+    width: 30%;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 20px; 
+    border: 3px solid #3354cd;
 }
 
 .stocksymbol-limit {
@@ -174,6 +184,15 @@ width: 16.7%;
     font-size: 24px;
     border-radius: 20px; 
     margin-right: 10px;
+    height: 40px
+}
+
+.stockPriceUpdate {
+    display: inline-block;
+    width: 30%;
+    background-color: #000;
+    font-size: 24px;
+    border-radius: 20px; 
     height: 40px
 }
 

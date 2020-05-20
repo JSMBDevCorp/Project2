@@ -50,7 +50,7 @@ $(function() {
             type: "GET",
             data: updateStock
         }).then(function(req, res){
-          window.location.assign("/api/updateStockNow");
+          window.location.assign("/updateStockNow");
         })
     });
     
