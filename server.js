@@ -34,12 +34,19 @@ var hbs = exphbs.create({
   },
 
       getArrow: function(price, sellPrice, buyPrice){
-          if (price > sellPrice) {
-              return "assets/images/arrow-up.png";
-          }
-          else if (price < buyPrice){
+          console.log (price, sellPrice, buyPrice)
+          if (sellPrice == null && price < buyPrice) {
               return "assets/images/arrow-down.png";
           }
+          else if (buyPrice == null && price > sellPrice) {
+              return "assets/images/arrow-up.png";
+          }
+          else if (price > sellPrice) {
+              return "assets/images/arrow-up.png";
+          }
+          else if (price < buyPrice) {
+            return "assets/images/arrow-down.png";
+        }
       }
   }
   

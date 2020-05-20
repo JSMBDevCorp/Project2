@@ -74,7 +74,7 @@ var orm = {
 function filterStocks(queryStocks){
   filterDisplay = [];
   queryStocks.forEach(stock => {
-    console.log(stock.sellPrice);
+    console.log(stock.sellPrice, stock.buyPrice);
     if (stock.price < stock.buyPrice && stock.buyPrice != null || stock.price > stock.sellPrice && stock.sellPrice != null){
       filterDisplay.push(stock);
     }
