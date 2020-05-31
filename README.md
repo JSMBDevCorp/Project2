@@ -32,7 +32,9 @@ Visit https://thawing-sea-68388.herokuapp.com/
 
 ## Usage 
 
-* see demo *
+* see video demo *
+
+https://drive.google.com/file/d/1GactzeXwgEqN1DYJjBg5EWaYWtg_X8aB/view
 
 ![Image of StockWatch](public/assets/images/stockWatch.PNG)
 
