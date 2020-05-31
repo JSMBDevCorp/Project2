@@ -34,6 +34,8 @@ Visit https://thawing-sea-68388.herokuapp.com/
 
 * see demo *
 
+![Image of StockWatch](public/assets/images/stockWatch.PNG)
+
 
 ## Credits
 
